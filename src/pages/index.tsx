@@ -32,10 +32,10 @@ export default function Home() {
           <BannerContent>
             <h1>Walisson Silva</h1>
             <h3>
-              <strong>Desenvolvedor</strong> Web
+              <strong>Desenvolvedor</strong> Web &&
             </h3>
             <h3>
-              & <strong>Professor</strong> de Web e Data Science
+              <strong>Professor</strong> de Web e Data Science
             </h3>
 
             <SocialIconsContainer>
@@ -58,6 +58,8 @@ export default function Home() {
           </BannerContent>
         </HomeBannerContainer>
       </HomeBanner>
+
+      
     </>
   )
 }

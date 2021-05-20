@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import {
   Container,
@@ -9,11 +9,24 @@ import {
 } from './styles';
 
 export const Header = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(()=>{
+    document.addEventListener("scroll", (_) => {
+      const scrolled = document.scrollingElement.scrollTop;
+      if (scrolled >= 5) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+    });
+  },[])
+
   return (
-    <Container>
+    <Container hasSrolled={hasScrolled}>
       <HeaderContent>
         <HeaderBrand>
-          Walisson Silva <span>_</span>
+          Walisson Silva <span>.</span>
         </HeaderBrand>
 
         <NavList>
