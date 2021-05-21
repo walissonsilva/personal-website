@@ -31,7 +31,7 @@ export const Header = () => {
 
         <NavList>
           <NavLink isActive>Home</NavLink>
-          <NavLink>Sobre</NavLink>
+          <NavLink>About</NavLink>
           <NavLink>Portfolio</NavLink>
           <NavLink>Blog</NavLink>
         </NavList>

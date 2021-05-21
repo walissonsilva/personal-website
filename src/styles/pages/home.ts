@@ -1,25 +1,25 @@
 import styled from "styled-components";
 
 export const HomeBanner = styled.section`
-  padding: 4rem 0;
   background-color: ${props => props.theme.colors["background-primary"]};
-  border-radius: 0 0 150px 0;
+  /* border-radius: 0 0 150px 0; */
   margin-top: 80px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.55);
-  border-top: 1px solid ${props => props.theme.colors["alpha"] + '33'};
-
-  @media (max-width: 1192px) {
-    padding: 4rem;
-  }
+  border-top: 1px solid ${props => props.theme.colors["alpha"] + '33'};  
 `
 
 export const HomeBannerContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5rem 0;
+  height: 100%;
   max-width: 1160px;
-
   margin: 0 auto;
+
+  @media (max-width: 1192px) {
+    padding: 4rem;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -64,29 +64,31 @@ export const SocialIconsContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   
-  margin-top: 3rem;
+  margin-top: 2.6rem;
   padding-left: 0.75rem;
 `
 
-export const SocialIcon = styled.div`
-  width: 40px;
-  height: 40px;
+export const SocialIcon = styled.a`
+  display: block;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: ${props => `linear-gradient(to right,
     ${props.theme.colors["primary-color"]}, ${props.theme.colors["secondary-color"]})`};
   cursor: pointer;
   transition: filter 0.15s, transform 0.15s;
+  color: ${props => props.theme.colors.white};
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  & + div {
+  & + a {
     margin-left: 1.2rem;
   }
 
   svg {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   &:hover {

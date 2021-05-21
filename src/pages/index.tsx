@@ -17,6 +17,7 @@ import {
   SocialIconsContainer,
   SocialIcon,
 } from '../styles/pages/home';
+import { AboutSection } from '../components/HomeSections';
 
 export default function Home() {
   return (
@@ -39,19 +40,34 @@ export default function Home() {
             </h3>
 
             <SocialIconsContainer>
-              <SocialIcon>
+              <SocialIcon
+                href="https://www.linkedin.com/in/walissonsilva/"
+                target="_blank"
+              >
                 <IoLogoLinkedin />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon
+                href="https://github.com/walissonsilva"
+                target="_blank"
+              >
                 <IoLogoGithub />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon
+                href="https://www.youtube.com/c/walissonsilva"
+                target="_blank"
+              >
                 <IoLogoYoutube />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon
+                href="https://www.instagram.com/walissonsilvablog/"
+                target="_blank"
+              >
                 <IoLogoInstagram />
               </SocialIcon>
-              <SocialIcon>
+              <SocialIcon
+                href=""
+                target="_blank"
+              >
                 <IoMailSharp />
               </SocialIcon>
             </SocialIconsContainer>
@@ -59,7 +75,7 @@ export default function Home() {
         </HomeBannerContainer>
       </HomeBanner>
 
-      
+      <AboutSection />
     </>
   )
 }

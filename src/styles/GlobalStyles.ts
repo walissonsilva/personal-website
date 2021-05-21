@@ -44,13 +44,13 @@ const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar-track {
     box-shadow: none;
     -webkit-box-shadow: none;
-    background-color: ${props => props.theme.colors['background-primary']};
+    background-color: ${props => props.theme.colors['background-body']};
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background-color: ${props => props.theme.colors['alpha']};
+    background-color: ${props => props.theme.colors['background-primary']};
   }
 
   ::-webkit-scrollbar-corner {
