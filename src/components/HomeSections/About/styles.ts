@@ -4,22 +4,6 @@ export const Container = styled.section`
   margin-top: 3rem;
 `
 
-export const SectionTitle = styled.h2`
-  font-size: 2.8rem;
-  font-weight: 600;
-
-  hr {
-    position: relative;
-    display: block;
-    width: 50px;
-    height: 4px;
-    top: 0px;
-    left: 0;
-    background: ${props => `linear-gradient(to right,
-      ${props.theme.colors["primary-color"]}, ${props.theme.colors["secondary-color"]})`};
-  }
-`
-
 export const SimpleCardGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);

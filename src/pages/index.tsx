@@ -17,7 +17,8 @@ import {
   SocialIconsContainer,
   SocialIcon,
 } from '../styles/pages/home';
-import { AboutSection } from '../components/HomeSections';
+import { AboutSection, PortfolioSection } from '../components/HomeSections';
+import { GetStaticProps } from 'next';
 
 export default function Home() {
   return (
@@ -76,6 +77,14 @@ export default function Home() {
       </HomeBanner>
 
       <AboutSection />
+      <PortfolioSection />
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {},
+    revalidate: 24 * 60 * 60,
+  }
 }

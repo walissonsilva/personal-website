@@ -11,8 +11,11 @@ import {
 } from 'react-icons/fc';
 
 import {
-  Container,
   SectionTitle,
+} from '../../../styles/atoms';
+
+import {
+  Container,
   SimpleCardGrid,
   SimpleCard,
 } from './styles';
@@ -61,8 +64,6 @@ export const AboutSection: React.FC = () => {
             <strong>Louco por programação</strong>
           </SimpleCard>
         </SimpleCardGrid>
-
-        
       </Container>
     </SectionContainer>
   )

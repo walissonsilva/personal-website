@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const HomeBanner = styled.section`
   background-color: ${props => props.theme.colors["background-primary"]};
-  /* border-radius: 0 0 150px 0; */
   margin-top: 80px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.55);
   border-top: 1px solid ${props => props.theme.colors["alpha"] + '33'};  

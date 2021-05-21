@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
-  
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  margin-top: 3rem;
+  width: 100%;
 `
