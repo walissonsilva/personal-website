@@ -1,5 +1,10 @@
+import { GetStaticProps } from 'next';
+import Prismic from '@prismicio/client';
+
 import { Header } from '../components/Header'
 import NextHead from '../components/NextHead'
+import { AboutSection, PortfolioSection } from '../components/HomeSections';
+import { getPrismicClient } from '../services/prismic';
 
 import {
   IoLogoGithub,
@@ -17,9 +22,14 @@ import {
   SocialIconsContainer,
   SocialIcon,
 } from '../styles/pages/home';
-import { AboutSection, PortfolioSection } from '../components/HomeSections';
-import { GetStaticProps } from 'next';
-import { useState } from 'react';
+
+interface IPortfolioProject {
+  id: string;
+}
+
+interface HomeProps {
+
+}
 
 export default function Home() {
   return (
@@ -84,8 +94,21 @@ export default function Home() {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  const prismic = getPrismicClient();
+
+  const response = await prismic.query([
+    Prismic.predicates.at('document.type', 'portfolio-project')
+  ], {
+    // fetch: ['publication.title', 'publication.content'],
+    // pageSize: 100,
+  });
+
+  console.log(JSON.stringify(response.results, null, 2));
+
   return {
-    props: {},
+    props: {
+      portfolioProjects: response.results,
+    },
     revalidate: 24 * 60 * 60,
   }
 }

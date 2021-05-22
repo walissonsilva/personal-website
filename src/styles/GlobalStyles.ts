@@ -93,7 +93,7 @@ const GlobalStyles = createGlobalStyle`
 
   .react-modal {
     width: 90%;
-    max-width: 700px;
+    max-width: 800px;
     height: fit-content;
     max-height: calc(100vh - 140px);
     padding: 2rem 2.5rem;
@@ -101,7 +101,6 @@ const GlobalStyles = createGlobalStyle`
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
     position: relative;
     margin-top: 120px;
-    /* transform: scale(0.1, 0.1); */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 

@@ -18,6 +18,7 @@ export const OverlayContainer = styled.div`
   height: 100%;
   background: ${props => `linear-gradient(to right,
     ${props.theme.colors["primary-color"] + '77'}, ${props.theme.colors["secondary-color"] + '77'})`};
+  backdrop-filter: blur(2px);
   opacity: 0;
 
   display: flex;
