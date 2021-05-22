@@ -35,5 +35,5 @@ export const OverlayContainer = styled.div`
 
 export const Title = styled.h4`
   font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 `

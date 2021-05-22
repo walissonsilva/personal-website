@@ -14,6 +14,9 @@ export const Container = styled.header<ContainerProps>`
   height: 80px;
   position: fixed;
   top: 0;
+  left: 0;
+  z-index: 999;
+  
   ${props => props.hasSrolled && css`
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
   `}
