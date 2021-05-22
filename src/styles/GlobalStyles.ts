@@ -57,6 +57,10 @@ const GlobalStyles = createGlobalStyle`
     background: rgba(0,0,0,0);
   }
 
+  a {
+    text-decoration: none;
+  }
+
   [disabled] {
     cursor: not-allowed;
     opacity: 0.4;
@@ -85,6 +89,59 @@ const GlobalStyles = createGlobalStyle`
 
   .Toastify__toast-body {
     font-weight: 500;
+  }
+
+  .react-modal {
+    width: 90%;
+    max-width: 700px;
+    height: fit-content;
+    max-height: calc(100vh - 140px);
+    padding: 2rem 2.5rem;
+    border-radius: 10px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    margin-top: 120px;
+    /* transform: scale(0.1, 0.1); */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+
+    background-color: ${props => props.theme.colors['background-primary']};
+
+    button.close-modal-button {
+      background: transparent;
+      border: 0;
+      position: absolute;
+      top: 2rem;
+      right: 2.5rem;
+
+      &:hover {
+        svg {
+          transform: rotate(90deg);
+          transition: transform 0.5s;
+        }
+      }
+
+      svg {
+        color: ${props => props.theme.colors.white};
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .react-modal-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 

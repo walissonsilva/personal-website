@@ -19,6 +19,7 @@ import {
 } from '../styles/pages/home';
 import { AboutSection, PortfolioSection } from '../components/HomeSections';
 import { GetStaticProps } from 'next';
+import { useState } from 'react';
 
 export default function Home() {
   return (

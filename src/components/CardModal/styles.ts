@@ -36,4 +36,23 @@ export const OverlayContainer = styled.div`
 export const Title = styled.h4`
   font-size: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+`
+
+export const ModalTitle = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  font-weight: 600;
+`
+
+export const ModalDescription = styled.p`
+  margin: 1.8rem 0 1.8rem;
+  line-height: 1.5;
+  font-size: 1rem;
+`
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 `
