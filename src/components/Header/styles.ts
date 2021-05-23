@@ -50,8 +50,9 @@ export const NavList = styled.ul`
 `
 
 export const NavLink = styled.a<NavLinkProps>`
-  font-weight: 300;
+  font-weight: 500;
   cursor: pointer;
+  color: ${props => props.theme.colors.white};
 
   ${props => props.isActive && css`
     background: ${props => `linear-gradient(to right,
@@ -62,12 +63,17 @@ export const NavLink = styled.a<NavLinkProps>`
     transition: filter 0.2s;
 
     &:hover {
-      filter: brightness(1.1);
+      color: ${props => props.theme.colors.white};
+      filter: brightness(1.25);
       transition: filter 0.2s;
     }
   `}
 
   & + a {
     margin-left: 2rem;
+  }
+
+  &:hover {
+    font-weight: 500;
   }
 `

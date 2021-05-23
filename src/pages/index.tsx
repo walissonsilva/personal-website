@@ -1,10 +1,13 @@
 import { GetStaticProps } from 'next';
-import Prismic from '@prismicio/client';
 
 import { Header } from '../components/Header'
 import NextHead from '../components/NextHead'
-import { AboutSection, PortfolioSection } from '../components/HomeSections';
-import { getPrismicClient } from '../services/prismic';
+import {
+  AboutSection,
+  PortfolioSection,
+  IPortfolioProject,
+} from '../components/HomeSections';
+import { getPortfolioProjects } from '../services/prismic';
 
 import {
   IoLogoGithub,
@@ -23,15 +26,13 @@ import {
   SocialIcon,
 } from '../styles/pages/home';
 
-interface IPortfolioProject {
-  id: string;
-}
-
 interface HomeProps {
-
+  portfolioProjects: IPortfolioProject[];
 }
 
-export default function Home() {
+export default function Home({
+  portfolioProjects,
+}: HomeProps) {
   return (
     <>
       <NextHead title="Home | Walisson Silva" />
@@ -77,7 +78,7 @@ export default function Home() {
                 <IoLogoInstagram />
               </SocialIcon>
               <SocialIcon
-                href=""
+                href="mailto:walissonsilva10@gmail.com"
                 target="_blank"
               >
                 <IoMailSharp />
@@ -88,26 +89,21 @@ export default function Home() {
       </HomeBanner>
 
       <AboutSection />
-      <PortfolioSection />
+      <PortfolioSection
+        projects={portfolioProjects}
+      />
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prismic = getPrismicClient();
+  const projects = await getPortfolioProjects();
 
-  const response = await prismic.query([
-    Prismic.predicates.at('document.type', 'portfolio-project')
-  ], {
-    // fetch: ['publication.title', 'publication.content'],
-    // pageSize: 100,
-  });
-
-  console.log(JSON.stringify(response.results, null, 2));
+  console.log(projects);
 
   return {
     props: {
-      portfolioProjects: response.results,
+      portfolioProjects: projects,
     },
     revalidate: 24 * 60 * 60,
   }

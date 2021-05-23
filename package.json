@@ -10,6 +10,7 @@
   "dependencies": {
     "@prismicio/client": "^4.0.0",
     "next": "10.2.1",
+    "prismic-dom": "^2.2.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
@@ -18,6 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^15.3.1",
+    "@types/prismic-dom": "^2.1.1",
     "@types/react": "^17.0.6",
     "@types/react-modal": "^3.12.0",
     "@types/styled-components": "^5.1.9",

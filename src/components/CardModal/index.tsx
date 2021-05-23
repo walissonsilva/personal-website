@@ -19,6 +19,8 @@ interface CardModalProps {
   coverImage: string;
   altCoverImage?: string;
   description?: string;
+  actionUrl?: string;
+  isDescriptionHTML?: boolean;
 }
 
 export const CardModal: React.FC<CardModalProps> = ({
@@ -26,6 +28,8 @@ export const CardModal: React.FC<CardModalProps> = ({
   coverImage,
   altCoverImage = "",
   description = "",
+  actionUrl,
+  isDescriptionHTML = false,
 }) => {
   const { isOpen, toggleModal } = useModal();
 
@@ -45,20 +49,24 @@ export const CardModal: React.FC<CardModalProps> = ({
         <CoverImage src={coverImage} alt={altCoverImage} />
 
         <ModalDescription>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam iste quis quia ipsam, esse nihil, aliquid impedit aut molestiae nostrum nesciunt architecto velit beatae placeat quasi dicta vel facere pariatur?
-          {/* { description } */}
-
+          { isDescriptionHTML ? (
+            <div dangerouslySetInnerHTML={{ __html: description}} />
+          ) : (
+            <>{ description }</>
+          )}
         </ModalDescription>
         
-        <ButtonContainer>
-          <Link href="https://github.com/walissonsilva/ig-news">
-            <a target="_blank">
-              <Button size="sm">
-                Conferir no GitHub
-              </Button>
-            </a>
-          </Link>
-        </ButtonContainer>
+        { actionUrl && (
+          <ButtonContainer>
+            <Link href={actionUrl}>
+              <a target="_blank">
+                <Button size="sm">
+                  Conferir no GitHub
+                </Button>
+              </a>
+            </Link>
+          </ButtonContainer>
+        ) }
       </Modal>
     </Container>
   )

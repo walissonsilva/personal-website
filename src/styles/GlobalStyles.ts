@@ -12,6 +12,8 @@ const GlobalStyles = createGlobalStyle`
   #root {
     background-color: ${props => props.theme.colors['background-body']};
     color: ${props => props.theme.colors['text-color']};
+    font-size: 1rem;
+    font-weight: 400;
 
     @media (max-width: 1366px) {
       font-size: 93.75%;
@@ -61,6 +63,11 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  ul, ol {
+    list-style-position: inside;
+    padding-left: 1rem;
+  }
+
   [disabled] {
     cursor: not-allowed;
     opacity: 0.4;
@@ -93,7 +100,7 @@ const GlobalStyles = createGlobalStyle`
 
   .react-modal {
     width: 90%;
-    max-width: 800px;
+    max-width: 700px;
     height: fit-content;
     max-height: calc(100vh - 140px);
     padding: 2rem 2.5rem;

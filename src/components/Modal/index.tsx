@@ -21,6 +21,7 @@ export const Modal: React.FC<ModalProps> = ({
       className="react-modal"
       overlayClassName="react-modal-overlay"
       ariaHideApp={false}
+      preventScroll={false}
     >
       { children }
 

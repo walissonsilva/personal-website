@@ -50,6 +50,23 @@ export const ModalDescription = styled.p`
   margin: 1.8rem 0 1.8rem;
   line-height: 1.5;
   font-size: 1rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.colors['primary-color']};
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: ${props => props.theme.colors['secondary-color']};
+      transition: color 0.3s;
+    }
+  }
 `
 
 export const ButtonContainer = styled.div`

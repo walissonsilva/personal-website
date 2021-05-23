@@ -9,18 +9,41 @@ import {
   Container,
 } from './styles';
 
-export const PortfolioSection: React.FC = () => {
+export interface IPortfolioProject {
+  id: string;
+  title: string;
+  imageUrl: string;
+  description: string;
+  projectUrl: string;
+}
+
+interface PortfolioSectionProps {
+  projects: IPortfolioProject[];
+}
+
+export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
+  projects,
+}) => {
+  console.log(projects)
+
   return (
     <SectionContainer>
       <SectionTitle>Portfolio <hr /></SectionTitle>
 
       <Container>
-        <CardModal
-          title="IgNews"
-          coverImage="https://github.com/walissonsilva/blog-nextjs/raw/master/public/preview.gif"
-        />
+        { projects.map((project) => (
+          <CardModal
+            key={project.id}
+            title={project.title}
+            coverImage={project.imageUrl}
+            altCoverImage={project.title}
+            description={project.description}
+            actionUrl={project.projectUrl}
+            isDescriptionHTML
+          />
+        ) ) }
 
-        <CardModal
+        {/* <CardModal
           title="Lista de Tarefas Simples"
           coverImage="https://github.com/walissonsilva/todo-list-react/raw/main/public/to-do.gif"
         />
@@ -33,7 +56,7 @@ export const PortfolioSection: React.FC = () => {
         <CardModal
           title="Blog com Next.js"
           coverImage="https://github.com/walissonsilva/blog-nextjs/raw/master/public/preview.gif"
-        />
+        /> */}
       </Container>
     </SectionContainer>
   )
