@@ -6,8 +6,14 @@ import {
   AboutSection,
   PortfolioSection,
   IPortfolioProject,
+  BlogSection,
+  IBlogCard,
 } from '../components/HomeSections';
-import { getPortfolioProjects } from '../services/prismic';
+
+import {
+  getPortfolioProjects,
+  getPostsToHome,
+} from '../services/prismic';
 
 import {
   IoLogoGithub,
@@ -28,10 +34,12 @@ import {
 
 interface HomeProps {
   portfolioProjects: IPortfolioProject[];
+  posts: IBlogCard[];
 }
 
 export default function Home({
   portfolioProjects,
+  posts,
 }: HomeProps) {
   return (
     <>
@@ -89,21 +97,26 @@ export default function Home({
       </HomeBanner>
 
       <AboutSection />
+      
       <PortfolioSection
         projects={portfolioProjects}
       />
+
+      <BlogSection posts={posts} />
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await getPortfolioProjects();
+  const posts = await getPostsToHome();
 
-  console.log(projects);
+  console.log(posts);
 
   return {
     props: {
       portfolioProjects: projects,
+      posts,
     },
     revalidate: 24 * 60 * 60,
   }

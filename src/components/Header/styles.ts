@@ -36,9 +36,11 @@ export const HeaderContent = styled.nav`
   align-items: center;
 `
 
-export const HeaderBrand = styled.h2`
+export const HeaderBrand = styled.a`
   font-size: 1.6rem;
   font-weight: 700;
+  color: ${props => props.theme.colors["white"]};
+  cursor: pointer;
 
   span {
     color: ${props => props.theme.colors["primary-color"]};

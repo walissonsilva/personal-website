@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 import {
@@ -25,7 +26,7 @@ export const Header = () => {
   return (
     <Container hasSrolled={hasScrolled}>
       <HeaderContent>
-        <HeaderBrand>
+        <HeaderBrand href="/">
           Walisson Silva <span>.</span>
         </HeaderBrand>
 

@@ -1,0 +1,64 @@
+import { GetStaticProps } from "next"
+import { Header } from "../components/Header"
+import NextHead from "../components/NextHead"
+import { SectionTitle } from "../styles/atoms"
+import { SectionContainer } from "../styles/containers"
+
+import { getPostsToBlogPage } from '../services/prismic';
+
+import {
+  Container,
+  PostsContainer,
+} from '../styles/pages/blog';
+import { IBlogCard } from "../components/HomeSections"
+import { BlogCard } from "../components/BlogCard"
+
+interface BlogProps {
+  posts: IBlogCard[];
+}
+
+export default function Blog({
+  posts,
+}: BlogProps) {
+  return (
+    <>
+      <NextHead title="Blog | Walisson Silva" />
+      
+      <Header />
+
+      <SectionContainer>
+        
+        <Container>
+          <SectionTitle>
+            Blog
+            <hr />
+          </SectionTitle>
+
+          <PostsContainer>
+            { posts.map(post => (
+              <BlogCard
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                subtitle={post.subtitle}
+                imageUrl={post.imageUrl}
+                level={post.level}
+              />
+            )) }
+          </PostsContainer>
+        </Container>
+      </SectionContainer>
+    </>
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const posts = await getPostsToBlogPage();
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 60,
+  }
+}
