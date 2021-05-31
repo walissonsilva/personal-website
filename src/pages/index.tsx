@@ -44,7 +44,7 @@ export default function Home({
   return (
     <>
       <NextHead title="Home | Walisson Silva" />
-      <Header />
+      <Header active="home" />
 
       <HomeBanner>
         <HomeBannerContainer>
@@ -110,8 +110,6 @@ export default function Home({
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await getPortfolioProjects();
   const posts = await getPostsToHome();
-
-  console.log(posts);
 
   return {
     props: {

@@ -1,0 +1,92 @@
+import { GetStaticPaths, GetStaticProps } from "next"
+import { BiCalendar, BiTime, BiUser } from "react-icons/bi";
+import { Header } from "../../components/Header";
+import NextHead from "../../components/NextHead"
+import { getPost } from "../../services/prismic"
+import { SectionContainer } from "../../styles/containers";
+
+import {
+  Container,
+  PostHeader,
+  PostDataContainer,
+  PostData,
+  Level,
+  PostTitle,
+  PostSubtitle,
+  Content,
+} from '../../styles/pages/post';
+
+interface IPost {
+  id: string;
+  title: string;
+  subtitle: string;
+  imageUrl: string;
+  level: string;
+  content: string;
+  readingTime: number;
+  updatedAt: string;
+}
+
+type PostProps = {
+  post: IPost,
+};
+
+export default function Post({
+  post,
+}: PostProps) {
+  return (
+    <>
+      <NextHead title={post.title} />
+
+      <Header active="blog" />
+
+      <SectionContainer>
+        <Container>
+          <PostHeader>
+            <PostTitle>{post.title}</PostTitle>
+            <PostSubtitle>{post.subtitle}</PostSubtitle>
+
+            <PostDataContainer>
+              <PostData>
+                <BiUser />
+                Walisson Silva
+              </PostData>
+              <PostData>
+                <BiCalendar />
+                { post.updatedAt }
+              </PostData>
+              <PostData>
+                <BiTime />
+                { `${post.readingTime} min` }
+              </PostData>
+              <Level>
+                { post.level }
+              </Level>
+            </PostDataContainer>
+          </PostHeader>
+
+          <Content dangerouslySetInnerHTML={{__html: post.content}} />
+        </Container>
+      </SectionContainer>
+    </>
+  )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { id } = params;
+
+  const post = await getPost(String(id));
+
+  return {
+    props: {
+      post,
+    },
+  }
+}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/dist/client/router';
 import React, { useEffect, useState } from 'react';
 
 import {
@@ -9,7 +10,13 @@ import {
   NavLink,
 } from './styles';
 
-export const Header = () => {
+interface HeaderProps {
+  active: 'home' | 'blog';
+}
+
+export const Header = ({
+  active,
+}: HeaderProps) => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(()=>{
@@ -21,7 +28,7 @@ export const Header = () => {
         setHasScrolled(false);
       }
     });
-  },[])
+  }, [])
 
   return (
     <Container hasSrolled={hasScrolled}>
@@ -31,10 +38,20 @@ export const Header = () => {
         </HeaderBrand>
 
         <NavList>
-          <NavLink isActive>Home</NavLink>
-          <NavLink>About</NavLink>
-          <NavLink>Portfolio</NavLink>
-          <NavLink>Blog</NavLink>
+          <NavLink
+            href="/"
+            isActive={active === 'home'}
+          >
+            Home
+          </NavLink>
+          {/* <NavLink>About</NavLink> */}
+          {/* <NavLink>Portfolio</NavLink> */}
+          <NavLink
+            href="/blog"
+            isActive={active === 'blog'}
+          >
+            Blog
+          </NavLink>
         </NavList>
       </HeaderContent>
     </Container>

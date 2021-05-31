@@ -9,4 +9,8 @@ export const SectionContainer = styled.div`
   @media (max-width: 1192px) {
     padding: 4rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `

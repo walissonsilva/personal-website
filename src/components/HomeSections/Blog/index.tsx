@@ -3,6 +3,7 @@ import React from 'react';
 import { SectionTitle } from '../../../styles/atoms';
 import { SectionContainer } from '../../../styles/containers';
 import { BlogCard } from '../../BlogCard';
+import NextHead from '../../NextHead';
 
 import {
   Container,
@@ -14,6 +15,8 @@ export interface IBlogCard {
   subtitle: string;
   imageUrl: string;
   level: 'Iniciante' | 'Intermediário' | 'Avançado';
+  readingTime: number;
+  updatedAt: string;
 }
 
 interface BlogSectionProps {
@@ -23,7 +26,6 @@ interface BlogSectionProps {
 export const BlogSection: React.FC<BlogSectionProps> = ({
   posts,
 }) => {
-  console.log(posts)
   return (
     <SectionContainer>
       <SectionTitle>Blog <hr /></SectionTitle>
@@ -37,6 +39,8 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
             subtitle={post.subtitle}
             imageUrl={post.imageUrl}
             level={post.level}
+            readingTime={post.readingTime}
+            updatedAt={post.updatedAt}
           />
         )) }
       </Container>

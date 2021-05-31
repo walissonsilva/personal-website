@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BiCalendar, BiTime, BiUser } from 'react-icons/bi';
 import { IBlogCard } from '../HomeSections';
 
 import {
@@ -8,6 +9,8 @@ import {
   Content,
   Subtitle,
   Level,
+  PostDataContainer,
+  PostData,
 } from './styles';
 
 export function BlogCard({
@@ -16,13 +19,28 @@ export function BlogCard({
   subtitle,
   imageUrl,
   level,
+  readingTime,
+  updatedAt,
 }: IBlogCard) {
-  console.log(imageUrl);
   return (
-    <Link href={`/blog/${id}`}>
+    <Link href={`/posts/${id}`}>
       <Container>
         <Header>
           <CoverImage src={imageUrl} alt={title} />
+          <PostDataContainer>
+            <PostData>
+              <BiCalendar />
+              { updatedAt }
+            </PostData>
+            <PostData>
+              <BiTime />
+              { `${readingTime} min` }
+            </PostData>
+            <PostData>
+              <BiUser />
+              Walisson Silva
+            </PostData>
+          </PostDataContainer>
         </Header>
 
         <Content>

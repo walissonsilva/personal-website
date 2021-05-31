@@ -46,7 +46,7 @@ export const ModalTitle = styled.h2`
   font-weight: 600;
 `
 
-export const ModalDescription = styled.p`
+export const ModalDescription = styled.div`
   margin: 1.8rem 0 1.8rem;
   line-height: 1.5;
   font-size: 1rem;

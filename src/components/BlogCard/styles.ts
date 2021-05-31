@@ -48,8 +48,28 @@ export const Level = styled.span`
   border-radius: 6px;
   font-size: 0.8rem;
   font-weight: 400;
-  /* margin-bottom: 0.5rem; */
   position: absolute;
   bottom: 1rem;
   left: 1rem;
+`
+
+export const PostDataContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const PostData = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+  color: ${props => props.theme.colors.alpha};
+  font-size: 0.8rem;
+  padding: 0 1rem;
+
+  svg {
+    font-size: 0.8rem;
+    margin-right: 0.45rem;
+  }
 `

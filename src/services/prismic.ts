@@ -42,23 +42,35 @@ export async function getPostsToHome() {
   const response = await prismic.query([
     Prismic.predicates.at('document.type', 'post')
   ], {
-    fetch: [
-      'post.uid',
-      'post.level',
-      'post.cover',
-      'post.title',
-      'post.subtitle'
-    ],
+    // fetch: [
+    //   'post.uid',
+    //   'post.level',
+    //   'post.cover',
+    //   'post.title',
+    //   'post.subtitle'
+    // ],
     pageSize: 6,
   });
 
+  const qntWordsReadPerMinute = 200;
+
   const posts = response.results.map(post => {
+    const qntWordsOnPost = post.data.content.reduce((wordsContent, content) => {
+      return wordsContent += content.text?.length ?? 0;
+    }, 0);
+
     return {
       id: post.uid,
       title: post.data.title[0].text,
       subtitle: post.data.subtitle[0].text,
       imageUrl: post.data.cover.url,
       level: post.data.level,
+      readingTime: Math.ceil(qntWordsOnPost / qntWordsReadPerMinute),
+      updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: '2-digit',
+      })
     }
   });
 
@@ -70,25 +82,64 @@ export async function getPostsToBlogPage() {
 
   const response = await prismic.query([
     Prismic.predicates.at('document.type', 'post')
-  ], {
-    fetch: [
-      'post.uid',
-      'post.level',
-      'post.cover',
-      'post.title',
-      'post.subtitle'
-    ],
-  });
+  ], {});
+
+  const qntWordsReadPerMinute = 200;
 
   const posts = response.results.map(post => {
+    const qntWordsOnPost = post.data.content.reduce((wordsContent, content) => {
+      return wordsContent += content.text?.length ?? 0;
+    }, 0);
+
     return {
       id: post.uid,
       title: post.data.title[0].text,
       subtitle: post.data.subtitle[0].text,
-      imageUrl: post.data.cover.url,
+      imageUrl: post.data.cover?.url ?? '',
       level: post.data.level,
+      readingTime: Math.ceil(qntWordsOnPost / qntWordsReadPerMinute),
+      updatedAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: '2-digit',
+      })
     }
   });
 
   return posts;
+}
+
+export async function getPost(id: string) {
+  const prismic = getPrismicClient();
+
+  const response = await prismic.getByUID(
+    'post',
+    id,
+    {}
+  )
+  
+  const qntWordsReadPerMinute = 200;
+  const qntWordsOnPost = response.data.content.reduce((wordsContent, content) => {
+    return wordsContent += content.text?.length ?? 0;
+  }, 0);
+
+
+  const readingTime = Math.ceil(qntWordsOnPost / qntWordsReadPerMinute);
+
+  const post = {
+    id,
+    title: RichText.asText(response.data.title),
+    subtitle: RichText.asText(response.data.subtitle),
+    imageUrl: response.data.cover.url,
+    level: response.data.level,
+    content: RichText.asHtml(response.data.content),
+    readingTime,
+    updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    })
+  }
+
+  return post;
 }

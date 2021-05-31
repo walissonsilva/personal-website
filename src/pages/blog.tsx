@@ -24,7 +24,7 @@ export default function Blog({
     <>
       <NextHead title="Blog | Walisson Silva" />
       
-      <Header />
+      <Header active="blog" />
 
       <SectionContainer>
         
@@ -43,6 +43,8 @@ export default function Blog({
                 subtitle={post.subtitle}
                 imageUrl={post.imageUrl}
                 level={post.level}
+                readingTime={post.readingTime}
+                updatedAt={post.updatedAt}
               />
             )) }
           </PostsContainer>

@@ -9,7 +9,7 @@ export const SimpleCardGrid = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 
-  margin-top: 2rem;
+  margin-top: 3rem;
 `
 
 export const SimpleCard = styled.div`
