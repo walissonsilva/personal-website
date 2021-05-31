@@ -52,11 +52,15 @@ export async function getPostsToHome() {
     pageSize: 6,
   });
 
-  const qntWordsReadPerMinute = 200;
+  const qntWordsReadPerMinute = 150;
 
   const posts = response.results.map(post => {
     const qntWordsOnPost = post.data.content.reduce((wordsContent, content) => {
-      return wordsContent += content.text?.length ?? 0;
+      if (content.text) {
+        return wordsContent += content.text.split(" ").length;
+      }
+
+      return wordsContent;
     }, 0);
 
     return {
@@ -84,11 +88,14 @@ export async function getPostsToBlogPage() {
     Prismic.predicates.at('document.type', 'post')
   ], {});
 
-  const qntWordsReadPerMinute = 200;
+  const qntWordsReadPerMinute = 150;
 
   const posts = response.results.map(post => {
     const qntWordsOnPost = post.data.content.reduce((wordsContent, content) => {
-      return wordsContent += content.text?.length ?? 0;
+      if (content.text) {
+        return wordsContent += content.text.split(" ").length;
+      }
+      return wordsContent;
     }, 0);
 
     return {
@@ -118,9 +125,13 @@ export async function getPost(id: string) {
     {}
   )
   
-  const qntWordsReadPerMinute = 200;
+  const qntWordsReadPerMinute = 150;
   const qntWordsOnPost = response.data.content.reduce((wordsContent, content) => {
-    return wordsContent += content.text?.length ?? 0;
+    if (content.text) {
+      return wordsContent += content.text.split(" ").length;
+    }
+
+    return wordsContent;
   }, 0);
 
 

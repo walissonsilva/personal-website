@@ -14,3 +14,11 @@ export const SectionContainer = styled.div`
     padding: 2rem;
   }
 `
+
+export const ButtonCenteredContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2rem;
+`

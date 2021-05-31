@@ -1,13 +1,17 @@
 import React from 'react';
 
 import { SectionTitle } from '../../../styles/atoms';
-import { SectionContainer } from '../../../styles/containers';
 import { BlogCard } from '../../BlogCard';
-import NextHead from '../../NextHead';
+import { Button } from '../../Button';
 
+import {
+  ButtonCenteredContainer,
+  SectionContainer
+} from '../../../styles/containers';
 import {
   Container,
 } from './styles';
+import Link from 'next/link';
 
 export interface IBlogCard {
   id: string;
@@ -44,6 +48,16 @@ export const BlogSection: React.FC<BlogSectionProps> = ({
           />
         )) }
       </Container>
+
+      <ButtonCenteredContainer>
+        <Link href="/blog">
+          <a>
+            <Button>
+              Ver mais
+            </Button>
+          </a>
+        </Link>
+      </ButtonCenteredContainer>
     </SectionContainer>
   )
 }
