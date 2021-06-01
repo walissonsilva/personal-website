@@ -8,9 +8,7 @@ export const Container = styled.footer`
   color: ${props => props.theme.colors.alpha};
   font-weight: 400;
   
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 
   a {
     margin-left: 0.4rem;
