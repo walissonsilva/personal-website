@@ -134,7 +134,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     @media (max-width: 500px) {
-      margin-top: 30px;
+      margin-top: 45px;
     }
   }
 
