@@ -177,4 +177,22 @@ export const SocialIcon = styled.a`
       font-size: 18px;
     }
   }
+
+  @media (max-width: 880px) {
+    width: 46px;
+    height: 46px;
+
+    svg {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    width: 36px;
+    height: 36px;
+
+    svg {
+      font-size: 18px;
+    }
+  }
 `
