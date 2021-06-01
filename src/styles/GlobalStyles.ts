@@ -39,20 +39,20 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
     height: 10px;
   }
 
   ::-webkit-scrollbar-track {
     box-shadow: none;
     -webkit-box-shadow: none;
-    background-color: ${props => props.theme.colors['background-body']};
+    background-color: ${props => props.theme.colors['background-primary']};
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background-color: ${props => props.theme.colors['background-primary']};
+    background-color: ${props => props.theme.colors['background-body']};
   }
 
   ::-webkit-scrollbar-corner {
@@ -107,7 +107,7 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 10px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
     position: relative;
-    margin-top: 120px;
+    margin-top: 60px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -131,6 +131,10 @@ const GlobalStyles = createGlobalStyle`
         color: ${props => props.theme.colors.white};
         font-size: 1.6rem;
       }
+    }
+
+    @media (max-width: 500px) {
+      margin-top: 30px;
     }
   }
 

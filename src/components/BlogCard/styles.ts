@@ -55,6 +55,8 @@ export const Level = styled.span`
 export const PostDataContainer = styled.div`
   display: flex;
   align-items: center;
+
+  padding: 0 1rem;
 `
 
 export const PostData = styled.span`
@@ -65,10 +67,21 @@ export const PostData = styled.span`
   margin-top: 1rem;
   color: ${props => props.theme.colors.alpha};
   font-size: 0.8rem;
-  padding: 0 1rem;
+
+  & + span {
+    margin-left: 1rem;
+  }
 
   svg {
     font-size: 0.8rem;
     margin-right: 0.45rem;
+  }
+
+  @media (max-width: 400px) {
+    /* padding: 0 0.75rem; */
+
+    & + span {
+      margin-left: 0.75rem;
+    }
   }
 `

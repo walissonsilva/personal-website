@@ -97,6 +97,7 @@ export const BannerContent = styled.div`
 
     h3 {
       font-size: 1.8rem;
+      padding-left: 0;
     }
   }
 
@@ -137,6 +138,7 @@ export const SocialIconsContainer = styled.div`
 
   @media (max-width: 880px) {
     justify-content: center;
+    padding-left: 0;
   }
 `
 

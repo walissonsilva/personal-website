@@ -119,6 +119,6 @@ export const getStaticProps: GetStaticProps = async () => {
       portfolioProjects: projects,
       posts,
     },
-    revalidate: 24 * 60 * 60,
+    revalidate: 60,
   }
 }
