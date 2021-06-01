@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.article`
   width: 100%;
-  height: 100%;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s;
