@@ -10,6 +10,14 @@ export const SimpleCardGrid = styled.div`
   gap: 1rem;
 
   margin-top: 3rem;
+
+  @media (max-width: 896px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const SimpleCard = styled.div`

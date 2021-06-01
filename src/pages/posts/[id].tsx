@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import { BiCalendar, BiTime, BiUser } from "react-icons/bi";
+import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
 import NextHead from "../../components/NextHead"
 import { getPost } from "../../services/prismic"
@@ -68,6 +69,8 @@ export default function Post({
           <Content dangerouslySetInnerHTML={{__html: post.content}} />
         </Container>
       </SectionContainer>
+
+      <Footer />
     </>
   )
 }

@@ -7,4 +7,8 @@ export const Container = styled.div`
 
   margin-top: 3rem;
   width: 100%;
+
+  @media (max-width: 896px) {
+    grid-template-columns: 1fr;
+  }
 `

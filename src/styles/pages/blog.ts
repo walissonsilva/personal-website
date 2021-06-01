@@ -10,4 +10,12 @@ export const PostsContainer = styled.div`
   gap: 2rem;
 
   margin-top: 3rem;
+
+  @media (max-width: 1160px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 896px) {
+    grid-template-columns: 1fr;
+  }
 `

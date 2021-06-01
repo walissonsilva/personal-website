@@ -24,6 +24,10 @@ export const Container = styled.header<ContainerProps>`
   @media (max-width: 1300px) {
     padding: 0 4rem;
   }
+
+  @media (max-width: 768px) {
+    padding: 0 2.5rem;
+  }
 `
 
 export const HeaderContent = styled.nav`
@@ -45,6 +49,10 @@ export const HeaderBrand = styled.a`
   span {
     color: ${props => props.theme.colors["primary-color"]};
   }
+
+  @media (max-width: 500px) {
+    font-size: 1.3rem;
+  }
 `
 
 export const NavList = styled.ul`
@@ -56,10 +64,10 @@ export const NavLink = styled.a<NavLinkProps>`
   cursor: pointer;
   color: ${props => props.theme.colors.white};
 
-  ${props => props.isActive && css`
+  ${props => props.isActive ? css`
     background: ${props => `linear-gradient(to right,
     ${props.theme.colors["primary-color"]}, ${props.theme.colors["secondary-color"]})`};
-    padding: 0.3rem 0.8rem;
+    padding: 0.3rem 1rem 0.4rem;
     border-radius: 1rem;
     font-weight: 500;
     transition: filter 0.2s;
@@ -69,13 +77,29 @@ export const NavLink = styled.a<NavLinkProps>`
       filter: brightness(1.25);
       transition: filter 0.2s;
     }
+  ` : css`
+    padding: 0.3rem 1rem 0.4rem;
+    border-radius: 1rem;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: ${props => props.theme.colors["background-secondary"]};
+      color: ${props => props.theme.colors.white};
+      transition: background-color 0.3s;
+    }
   `}
 
   & + a {
-    margin-left: 2rem;
+    margin-left: 1.5rem;
   }
 
   &:hover {
     font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    & + a {
+      margin-left: 1rem;
+    }
   }
 `

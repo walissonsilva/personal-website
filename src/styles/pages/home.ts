@@ -19,6 +19,10 @@ export const HomeBannerContainer = styled.div`
   @media (max-width: 1192px) {
     padding: 4rem;
   }
+
+  @media (max-width: 880px) {
+    flex-direction: column;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -29,6 +33,12 @@ export const ImageContainer = styled.div`
 
   img {
     width: 100%;
+    min-width: 250px;
+    max-width: 500px;
+  }
+
+  @media (max-width: 880px) {
+    margin-bottom: 2rem;
   }
 `
 
@@ -56,7 +66,66 @@ export const BannerContent = styled.div`
       font-family: 'JetBrains Mono', monospace;
     }
   }
-  `
+
+  @media (max-width: 1200px) {
+    h1 {
+      font-size: 4.9rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 880px) {
+    margin-left: 0;
+    text-align: center;
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (max-width: 635px) {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 540px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+  }
+`
 
 export const SocialIconsContainer = styled.div`
   display: flex;
@@ -65,6 +134,10 @@ export const SocialIconsContainer = styled.div`
   
   margin-top: 2.6rem;
   padding-left: 0.75rem;
+
+  @media (max-width: 880px) {
+    justify-content: center;
+  }
 `
 
 export const SocialIcon = styled.a`
@@ -94,5 +167,14 @@ export const SocialIcon = styled.a`
     filter: brightness(1.3);
     transform: translateY(-4px);
     transition: filter 0.15s, transform 0.15s;
+  }
+
+  @media (max-width: 1000px) {
+    width: 36px;
+    height: 36px;
+
+    svg {
+      font-size: 18px;
+    }
   }
 `

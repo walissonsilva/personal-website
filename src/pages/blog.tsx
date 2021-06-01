@@ -12,6 +12,7 @@ import {
 } from '../styles/pages/blog';
 import { IBlogCard } from "../components/HomeSections"
 import { BlogCard } from "../components/BlogCard"
+import Footer from "../components/Footer"
 
 interface BlogProps {
   posts: IBlogCard[];
@@ -50,6 +51,8 @@ export default function Blog({
           </PostsContainer>
         </Container>
       </SectionContainer>
+
+      <Footer />
     </>
   )
 }

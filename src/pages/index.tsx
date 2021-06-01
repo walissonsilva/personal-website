@@ -31,6 +31,7 @@ import {
   SocialIconsContainer,
   SocialIcon,
 } from '../styles/pages/home';
+import Footer from '../components/Footer';
 
 interface HomeProps {
   portfolioProjects: IPortfolioProject[];
@@ -103,6 +104,8 @@ export default function Home({
       />
 
       <BlogSection posts={posts} />
+
+      <Footer />
     </>
   )
 }

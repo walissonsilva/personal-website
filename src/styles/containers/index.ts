@@ -11,7 +11,7 @@ export const SectionContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    padding: 2rem;
+    padding: 4rem 2.5rem;
   }
 `
 

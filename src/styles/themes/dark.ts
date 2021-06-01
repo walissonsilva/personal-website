@@ -6,7 +6,7 @@ const colorsPallete = {
     
     'text-color': '#ffffff',
 
-    "background-body": '#333333',
+    "background-body": '#272727',
     "background-header": '#060F16',
     "background-primary": '#0E1116',
     "background-secondary": '#383D3B',
