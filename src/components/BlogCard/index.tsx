@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BiCalendar, BiTime, BiUser } from 'react-icons/bi';
-import { IBlogCard } from '../HomeSections';
+import { IPost } from '../HomeSections';
 
 import {
   Container,
@@ -21,7 +21,7 @@ export function BlogCard({
   level,
   readingTime,
   updatedAt,
-}: IBlogCard) {
+}: IPost) {
   return (
     <Link href={`/posts/${id}`}>
       <Container>

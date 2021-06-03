@@ -7,7 +7,7 @@ import {
   PortfolioSection,
   IPortfolioProject,
   BlogSection,
-  IBlogCard,
+  IPost,
 } from '../components/HomeSections';
 
 import {
@@ -35,7 +35,7 @@ import Footer from '../components/Footer';
 
 interface HomeProps {
   portfolioProjects: IPortfolioProject[];
-  posts: IBlogCard[];
+  posts: IPost[];
 }
 
 export default function Home({

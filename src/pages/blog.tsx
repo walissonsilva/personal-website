@@ -3,7 +3,7 @@ import { BiSearch } from "react-icons/bi"
 
 import { Header } from "../components/Header"
 import NextHead from "../components/NextHead"
-import { IBlogCard } from "../components/HomeSections"
+import { IPost } from "../components/HomeSections"
 import { BlogCard } from "../components/BlogCard"
 import Footer from "../components/Footer"
 import { getPostsToBlogPage } from '../services/prismic';
@@ -21,7 +21,7 @@ import { FormEvent, useState } from "react"
 import { useDebouncedCallback } from "use-debounce"
 
 interface BlogProps {
-  posts: IBlogCard[];
+  posts: IPost[];
 }
 
 export default function Blog({

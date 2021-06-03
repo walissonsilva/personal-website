@@ -50,6 +50,7 @@ export async function getPostsToHome() {
     //   'post.subtitle'
     // ],
     pageSize: 6,
+    orderings : '[document.last_publication_date desc]'
   });
 
   const qntWordsReadPerMinute = 150;
@@ -86,7 +87,7 @@ export async function getPostsToBlogPage() {
 
   const response = await prismic.query([
     Prismic.predicates.at('document.type', 'post')
-  ], {});
+  ], { orderings : '[document.last_publication_date desc]' });
 
   const qntWordsReadPerMinute = 150;
 

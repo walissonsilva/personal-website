@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import { SectionTitle } from '../../../styles/atoms';
 import { BlogCard } from '../../BlogCard';
@@ -11,9 +12,8 @@ import {
 import {
   Container,
 } from './styles';
-import Link from 'next/link';
 
-export interface IBlogCard {
+export interface IPost {
   id: string;
   title: string;
   subtitle: string;
@@ -24,7 +24,7 @@ export interface IBlogCard {
 }
 
 interface BlogSectionProps {
-  posts: IBlogCard[];
+  posts: IPost[];
 }
 
 export const BlogSection: React.FC<BlogSectionProps> = ({
