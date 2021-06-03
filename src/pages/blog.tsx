@@ -17,6 +17,8 @@ import {
   SearchInput,
 } from '../styles/pages/blog';
 import { SectionTitle } from "../styles/atoms"
+import { FormEvent, useState } from "react"
+import { useDebouncedCallback } from "use-debounce"
 
 interface BlogProps {
   posts: IBlogCard[];
@@ -25,6 +27,24 @@ interface BlogProps {
 export default function Blog({
   posts,
 }: BlogProps) {
+  const [searchPost, setSearchPost] = useState("");
+  const [currentPosts, setCurrentPosts] = useState(posts);
+
+  const handleSearchPost = (event: FormEvent<HTMLInputElement>) => {
+    setSearchPost(event.currentTarget.value);
+    findPosts();
+  }
+
+  const findPosts = useDebouncedCallback(() => {
+    const newPosts = posts.filter(post =>
+      post.title.toLowerCase()
+      .includes(searchPost.toLowerCase())
+    );
+
+    console.log(newPosts)
+    setCurrentPosts(newPosts);
+  }, 400)
+
   return (
     <>
       <NextHead title="Blog | Walisson Silva" />
@@ -32,7 +52,6 @@ export default function Blog({
       <Header active="blog" />
 
       <SectionContainer>
-        
         <Container>
           <FlexContainer>
             <SectionTitle>
@@ -43,6 +62,8 @@ export default function Blog({
             <SearchBarContainer>
               <SearchInput
                 placeholder="Pesquisa..."
+                value={searchPost}
+                onChange={handleSearchPost}
               />
               <BiSearch />
             </SearchBarContainer>
@@ -50,7 +71,7 @@ export default function Blog({
 
 
           <PostsContainer>
-            { posts.map(post => (
+            { currentPosts.map(post => (
               <BlogCard
                 key={post.id}
                 id={post.id}

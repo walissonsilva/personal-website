@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin-top: 4rem;
+  min-height: calc(100vh - 200px - 4rem);
 `
 
 export const PostsContainer = styled.div`
@@ -36,13 +37,14 @@ export const SearchBarContainer = styled.div`
   max-width: 350px;
   padding: 0.7rem 1rem;
   border-radius: 10px;
-  background-color: ${props => props.theme.colors["background-primary"]};
+  background-color: ${props => props.theme.colors["white"]};
 
   display: flex;
   align-items: center;
   position: relative;
 
   svg {
+    color: ${props => props.theme.colors.black};
     font-size: 1.1rem;
   }
 
@@ -54,12 +56,12 @@ export const SearchBarContainer = styled.div`
 
 export const SearchInput = styled.input`
   background-color: transparent;
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.black};
   font-size: 1rem;
   width: 100%;
   height: 1.25rem;
 
   &::placeholder {
-    color: ${props => props.theme.colors.alpha};
+    /* color: ${props => props.theme.colors.alpha}; */
   }
 `
