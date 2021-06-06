@@ -37,7 +37,12 @@ export default function Post({
 }: PostProps) {
   return (
     <>
-      <NextHead title={post.title} />
+      <NextHead
+        title={post.title}
+        description={post.subtitle}
+        ogImage={post.imageUrl}
+        ogUrl={`posts/${post.id}`}
+      />
 
       <Header active="blog" />
 

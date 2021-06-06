@@ -44,7 +44,12 @@ export default function Home({
 }: HomeProps) {
   return (
     <>
-      <NextHead title="Home | Walisson Silva" />
+      <NextHead
+        title="Home | Walisson Silva"
+        description="Site pessoal com informações profissionais, projetos de portfólio, e blog sobre Desenvolvimento Web, Python e Ciência de Dados."
+        ogImage=""
+      />
+
       <Header active="home" />
 
       <HomeBanner>

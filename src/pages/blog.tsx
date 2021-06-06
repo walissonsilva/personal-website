@@ -47,7 +47,12 @@ export default function Blog({
 
   return (
     <>
-      <NextHead title="Blog | Walisson Silva" />
+      <NextHead
+        title="Blog | Walisson Silva"
+        description="Blog sobre Desenvolvimento Web, Python e Ciência de Dados."
+        ogImage=""
+        ogUrl="blog"
+      />
       
       <Header active="blog" />
 
