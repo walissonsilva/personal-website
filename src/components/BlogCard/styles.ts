@@ -15,7 +15,7 @@ export const Container = styled.article`
 `
 
 export const Header = styled.header`
-
+  display: block;
 `
 
 export const CoverImage = styled.img`
