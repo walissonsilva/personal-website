@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from "next"
+import { GetServerSideProps, GetStaticPaths } from "next"
 import { BiCalendar, BiTime, BiUser } from "react-icons/bi";
 import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
@@ -87,7 +87,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetServerSideProps = async ({ params }) => {
   const { id } = params;
 
   const post = await getPost(String(id));

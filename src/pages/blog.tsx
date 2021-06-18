@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import { BiSearch } from "react-icons/bi"
 
 import { Header } from "../components/Header"
@@ -97,13 +97,12 @@ export default function Blog({
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const posts = await getPostsToBlogPage();
 
   return {
     props: {
       posts,
     },
-    revalidate: 60,
   }
 }

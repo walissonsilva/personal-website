@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 
 import { Header } from '../components/Header'
 import NextHead from '../components/NextHead'
@@ -115,7 +115,7 @@ export default function Home({
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetServerSideProps = async () => {
   const projects = await getPortfolioProjects();
   const posts = await getPostsToHome();
 
@@ -124,6 +124,5 @@ export const getStaticProps: GetStaticProps = async () => {
       portfolioProjects: projects,
       posts,
     },
-    revalidate: 60,
   }
 }
