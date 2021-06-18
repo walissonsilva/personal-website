@@ -8,22 +8,21 @@ export const Container = styled.div`
 export const PostsContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
 
   margin-top: 3rem;
 
   & > * {
-    flex: 1 300px;
+    flex: 1 330px;
+    min-height: 410px;
   }
 
-  @media (max-width: 1160px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 896px) {
-    grid-template-columns: 1fr;
+  @media (max-width: 990px) {
+    & > * {
+      min-height: auto;
+    }
   }
 `
 
