@@ -6,11 +6,17 @@ export const Container = styled.div`
 `
 
 export const PostsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 2rem;
 
   margin-top: 3rem;
+
+  & > * {
+    flex: 1 300px;
+  }
 
   @media (max-width: 1160px) {
     grid-template-columns: repeat(2, 1fr);

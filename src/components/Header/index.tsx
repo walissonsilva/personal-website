@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import { useRouter } from 'next/dist/client/router';
 import React, { useEffect, useState } from 'react';
 
 import {
@@ -44,8 +42,6 @@ export const Header = ({
           >
             Home
           </NavLink>
-          {/* <NavLink>About</NavLink> */}
-          {/* <NavLink>Portfolio</NavLink> */}
           <NavLink
             href="/blog"
             isActive={active === 'blog'}

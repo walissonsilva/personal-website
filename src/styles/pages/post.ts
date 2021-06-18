@@ -2,14 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.article`
   margin: 5rem auto 2rem;
+  max-width: 100%;
 `
 
 export const PostHeader = styled.header`
-
-`
-
-export const CoverImage = styled.img`
-  /* width: 70%; */
+  width: 100%;
 `
 
 export const PostTitle = styled.h1`
