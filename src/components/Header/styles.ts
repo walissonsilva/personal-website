@@ -55,7 +55,7 @@ export const HeaderBrand = styled.a`
   }
 `
 
-export const NavList = styled.ul`
+export const NavList = styled.div`
   list-style: none;
 `
 

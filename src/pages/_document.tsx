@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
 
   render () {
     return (
-      <Html>
+      <Html lang="pt-br">
         <Head>
           <link rel="icon" href="/favicon.png" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
