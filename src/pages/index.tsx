@@ -47,7 +47,7 @@ export default function Home({
       <NextHead
         title="Home | Walisson Silva"
         description="Site pessoal com informações profissionais, projetos de portfólio, e blog sobre Desenvolvimento Web, Python e Ciência de Dados."
-        ogImage=""
+        ogImage="/images/me.png"
       />
 
       <Header active="home" />
