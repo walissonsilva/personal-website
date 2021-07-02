@@ -35,6 +35,7 @@ export const ImageContainer = styled.div`
     width: 100%;
     min-width: 250px;
     max-width: 500px;
+    border-radius: 50%;
   }
 
   @media (max-width: 880px) {
