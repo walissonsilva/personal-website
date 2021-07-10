@@ -20,7 +20,7 @@ export default function NextHead({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={`https://www.walissonsilva.com/${ogUrl}`} />
+      <meta property="og:url" content={`https://www.walissonsilva.com/${ogUrl || ''}`} />
       <meta property="og:site_name" content="Walisson Silva" />
       <meta property="og:type" content="website" />
 
