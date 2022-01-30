@@ -1,19 +1,16 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps } from "next";
 
-import { Header } from '../components/Header'
-import NextHead from '../components/NextHead'
+import { Header } from "../components/Header";
+import NextHead from "../components/NextHead";
 import {
   AboutSection,
   PortfolioSection,
   IPortfolioProject,
   BlogSection,
   IPost,
-} from '../components/HomeSections';
+} from "../components/HomeSections";
 
-import {
-  getPortfolioProjects,
-  getPostsToHome,
-} from '../services/prismic';
+import { getPortfolioProjects, getPostsToHome } from "../services/prismic";
 
 import {
   IoLogoGithub,
@@ -21,7 +18,7 @@ import {
   IoLogoLinkedin,
   IoLogoYoutube,
   IoMailSharp,
-} from 'react-icons/io5';
+} from "react-icons/io5";
 
 import {
   HomeBanner,
@@ -30,18 +27,15 @@ import {
   BannerContent,
   SocialIconsContainer,
   SocialIcon,
-} from '../styles/pages/home';
-import Footer from '../components/Footer';
+} from "../styles/pages/home";
+import Footer from "../components/Footer";
 
 interface HomeProps {
   portfolioProjects: IPortfolioProject[];
   posts: IPost[];
 }
 
-export default function Home({
-  portfolioProjects,
-  posts,
-}: HomeProps) {
+export default function Home({ portfolioProjects, posts }: HomeProps) {
   return (
     <>
       <NextHead
@@ -103,19 +97,17 @@ export default function Home({
       </HomeBanner>
 
       <AboutSection />
-      
-      <PortfolioSection
-        projects={portfolioProjects}
-      />
+
+      <PortfolioSection projects={portfolioProjects} />
 
       <BlogSection posts={posts} />
 
       <Footer />
     </>
-  )
+  );
 }
 
-export const getStaticProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const projects = await getPortfolioProjects();
   const posts = await getPostsToHome();
 
@@ -124,5 +116,5 @@ export const getStaticProps: GetServerSideProps = async () => {
       portfolioProjects: projects,
       posts,
     },
-  }
-}
+  };
+};
