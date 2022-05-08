@@ -8,7 +8,7 @@ interface NavLinkProps {
 }
 
 export const Container = styled.header<ContainerProps>`
-  background-color: ${props => props.theme.colors["background-primary"]};
+  background-color: ${(props) => props.theme.colors["background-primary"]};
   padding: 0 2rem;
   width: 100vw;
   height: 80px;
@@ -16,10 +16,12 @@ export const Container = styled.header<ContainerProps>`
   top: 0;
   left: 0;
   z-index: 999;
-  
-  ${props => props.hasSrolled && css`
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
-  `}
+
+  ${(props) =>
+    props.hasSrolled &&
+    css`
+      box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.5);
+    `}
 
   @media (max-width: 1300px) {
     padding: 0 4rem;
@@ -27,8 +29,9 @@ export const Container = styled.header<ContainerProps>`
 
   @media (max-width: 768px) {
     padding: 0 2.5rem;
+    height: 70px;
   }
-`
+`;
 
 export const HeaderContent = styled.nav`
   max-width: 1200px;
@@ -38,56 +41,88 @@ export const HeaderContent = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    background-color: ${(props) => props.theme.colors["background-primary"]};
+  }
+`;
 
 export const HeaderBrand = styled.a`
   font-size: 1.6rem;
   font-weight: 700;
-  color: ${props => props.theme.colors["white"]};
+  color: ${(props) => props.theme.colors["white"]};
   cursor: pointer;
 
   span {
-    color: ${props => props.theme.colors["primary-color"]};
+    color: ${(props) => props.theme.colors["primary-color"]};
   }
 
   @media (max-width: 500px) {
     font-size: 1.3rem;
   }
-`
+`;
 
-export const NavList = styled.div`
+interface NavListProps {
+  isMenuOpen: boolean;
+}
+export const NavList = styled.div<NavListProps>`
   list-style: none;
-`
+
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: -74px;
+    z-index: 0;
+    width: 100vw;
+    padding: 2rem;
+    background-color: ${(props) => props.theme.colors["background-primary"]};
+    transition: transform 0.4s opacity 0.4s;
+    transform: translateY(0px);
+
+    ${(props) =>
+      !props.isMenuOpen &&
+      css`
+        visibility: hidden;
+        transition: transform 0.4s opacity 0.4s;
+      `}
+  }
+`;
 
 export const NavLink = styled.a<NavLinkProps>`
   font-weight: 500;
   cursor: pointer;
-  color: ${props => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
 
-  ${props => props.isActive ? css`
-    background: ${props => `linear-gradient(to right,
+  ${(props) =>
+    props.isActive
+      ? css`
+          background: ${(props) => `linear-gradient(to right,
     ${props.theme.colors["primary-color"]}, ${props.theme.colors["secondary-color"]})`};
-    padding: 0.3rem 1rem 0.4rem;
-    border-radius: 1rem;
-    font-weight: 500;
-    transition: filter 0.2s;
+          padding: 0.3rem 1rem 0.4rem;
+          border-radius: 1rem;
+          font-weight: 500;
+          transition: filter 0.2s;
 
-    &:hover {
-      color: ${props => props.theme.colors.white};
-      filter: brightness(1.25);
-      transition: filter 0.2s;
-    }
-  ` : css`
-    padding: 0.3rem 1rem 0.4rem;
-    border-radius: 1rem;
-    transition: background-color 0.3s;
+          &:hover {
+            color: ${(props) => props.theme.colors.white};
+            filter: brightness(1.25);
+            transition: filter 0.2s;
+          }
+        `
+      : css`
+          padding: 0.3rem 1rem 0.4rem;
+          border-radius: 1rem;
+          transition: background-color 0.3s;
 
-    &:hover {
-      background-color: ${props => props.theme.colors["background-secondary"]};
-      color: ${props => props.theme.colors.white};
-      transition: background-color 0.3s;
-    }
-  `}
+          &:hover {
+            background-color: ${(props) =>
+              props.theme.colors["background-secondary"]};
+            color: ${(props) => props.theme.colors.white};
+            transition: background-color 0.3s;
+          }
+        `}
 
   & + a {
     margin-left: 1.5rem;
@@ -102,4 +137,25 @@ export const NavLink = styled.a<NavLinkProps>`
       margin-left: 1rem;
     }
   }
-`
+`;
+
+export const MiniMenuContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+`;
+
+export const NavIcon = styled.div`
+  display: none;
+  cursor: pointer;
+
+  svg {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
