@@ -1,9 +1,9 @@
-import { GetServerSideProps, GetStaticPaths } from "next"
+import { GetServerSideProps } from "next";
 import { BiCalendar, BiTime, BiUser } from "react-icons/bi";
 import Footer from "../../components/Footer";
 import { Header } from "../../components/Header";
-import NextHead from "../../components/NextHead"
-import { getPost } from "../../services/prismic"
+import NextHead from "../../components/NextHead";
+import { getPost } from "../../services/prismic";
 import { SectionContainer } from "../../styles/containers";
 
 import {
@@ -15,7 +15,7 @@ import {
   PostTitle,
   PostSubtitle,
   Content,
-} from '../../styles/pages/post';
+} from "../../styles/pages/post";
 
 interface IPost {
   id: string;
@@ -29,12 +29,10 @@ interface IPost {
 }
 
 type PostProps = {
-  post: IPost,
+  post: IPost;
 };
 
-export default function Post({
-  post,
-}: PostProps) {
+export default function Post({ post }: PostProps) {
   return (
     <>
       <NextHead
@@ -59,35 +57,26 @@ export default function Post({
               </PostData>
               <PostData>
                 <BiCalendar />
-                { post.updatedAt }
+                {post.updatedAt}
               </PostData>
               <PostData>
                 <BiTime />
-                { `${post.readingTime} min` }
+                {`${post.readingTime} min`}
               </PostData>
-              <Level>
-                { post.level }
-              </Level>
+              <Level>{post.level}</Level>
             </PostDataContainer>
           </PostHeader>
 
-          <Content dangerouslySetInnerHTML={{__html: post.content}} />
+          <Content dangerouslySetInnerHTML={{ __html: post.content }} />
         </Container>
       </SectionContainer>
 
       <Footer />
     </>
-  )
+  );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: 'blocking',
-  }
-}
-
-export const getStaticProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const { id } = params;
 
   const post = await getPost(String(id));
@@ -96,6 +85,5 @@ export const getStaticProps: GetServerSideProps = async ({ params }) => {
     props: {
       post,
     },
-    revalidate: 60,
-  }
-}
+  };
+};
