@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { RiMenuFill } from "react-icons/ri";
+import { IoIosArrowUp } from "react-icons/io";
 import {
   Container,
   HeaderBrand,
   HeaderContent,
+  MiniMenuContainer,
+  NavIcon,
   NavLink,
   NavList,
 } from "./styles";
@@ -13,6 +17,7 @@ interface HeaderProps {
 
 export const Header = ({ active }: HeaderProps) => {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     document.addEventListener("scroll", (_) => {
@@ -28,11 +33,17 @@ export const Header = ({ active }: HeaderProps) => {
   return (
     <Container hasSrolled={hasScrolled}>
       <HeaderContent>
-        <HeaderBrand href="/">
-          Walisson Silva <span>.</span>
-        </HeaderBrand>
+        <MiniMenuContainer>
+          <HeaderBrand href="/">
+            Walisson Silva <span>.</span>
+          </HeaderBrand>
 
-        <NavList>
+          <NavIcon onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <IoIosArrowUp /> : <RiMenuFill />}
+          </NavIcon>
+        </MiniMenuContainer>
+
+        <NavList isMenuOpen={isMenuOpen}>
           <NavLink href="/" isActive={active === "home"}>
             Home
           </NavLink>

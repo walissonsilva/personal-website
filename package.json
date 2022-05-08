@@ -13,7 +13,7 @@
     "prismic-dom": "^2.2.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-icons": "^4.2.0",
+    "react-icons": "^4.3.1",
     "react-modal": "^3.15.1",
     "styled-components": "^5.3.0",
     "use-debounce": "^6.0.1"

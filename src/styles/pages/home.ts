@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
 export const HomeBanner = styled.section`
-  background-color: ${props => props.theme.colors["background-primary"]};
+  background-color: ${(props) => props.theme.colors["background-primary"]};
   margin-top: 80px;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.55);
-  border-top: 1px solid ${props => props.theme.colors["alpha"] + '33'};  
-`
+  border-top: 1px solid ${(props) => props.theme.colors["alpha"] + "33"};
+
+  @media (max-width: 768px) {
+    margin-top: 70px;
+  }
+`;
 
 export const HomeBannerContainer = styled.div`
   display: flex;
@@ -23,7 +27,7 @@ export const HomeBannerContainer = styled.div`
   @media (max-width: 880px) {
     flex-direction: column;
   }
-`
+`;
 
 export const ImageContainer = styled.div`
   flex: 1;
@@ -41,30 +45,32 @@ export const ImageContainer = styled.div`
   @media (max-width: 880px) {
     margin-bottom: 2rem;
   }
-`
+`;
 
 export const BannerContent = styled.div`
   flex: 2;
   margin-left: 4rem;
-  
+
   h1 {
     font-size: 6rem;
     font-weight: 600;
   }
-  
+
   h3 {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 0.4rem;
     padding-left: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-    
+    font-family: "JetBrains Mono", monospace;
+
     strong {
       font-weight: 500;
-      background: ${props => `linear-gradient(to right,
-        ${props.theme.colors["primary-color"] + '77'}, ${props.theme.colors["secondary-color"] + '77'})`};
+      background: ${(props) => `linear-gradient(to right,
+        ${props.theme.colors["primary-color"] + "77"}, ${
+        props.theme.colors["secondary-color"] + "77"
+      })`};
       padding: 0rem 0.4rem;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: "JetBrains Mono", monospace;
     }
   }
 
@@ -127,13 +133,13 @@ export const BannerContent = styled.div`
       font-size: 1rem;
     }
   }
-`
+`;
 
 export const SocialIconsContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
+
   margin-top: 2.6rem;
   padding-left: 0.75rem;
 
@@ -141,18 +147,18 @@ export const SocialIconsContainer = styled.div`
     justify-content: center;
     padding-left: 0;
   }
-`
+`;
 
 export const SocialIcon = styled.a`
   display: block;
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: ${props => `linear-gradient(to right,
+  background: ${(props) => `linear-gradient(to right,
     ${props.theme.colors["primary-color"]}, ${props.theme.colors["secondary-color"]})`};
   cursor: pointer;
   transition: filter 0.15s, transform 0.15s;
-  color: ${props => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
 
   display: flex;
   justify-content: center;
@@ -198,4 +204,4 @@ export const SocialIcon = styled.a`
       font-size: 18px;
     }
   }
-`
+`;
