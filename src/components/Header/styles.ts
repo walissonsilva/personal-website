@@ -73,13 +73,26 @@ export const NavList = styled.div<NavListProps>`
 
   @media (max-width: 768px) {
     position: absolute;
-    bottom: -74px;
+    bottom: -110px;
     z-index: 0;
     width: 100vw;
-    padding: 2rem;
+    padding: 1rem 2rem;
     background-color: ${(props) => props.theme.colors["background-primary"]};
     transition: transform 0.4s opacity 0.4s;
     transform: translateY(0px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > a {
+      width: 100%;
+
+      & + a {
+        margin-left: 0;
+        margin-top: 0.4rem;
+      }
+    }
 
     ${(props) =>
       !props.isMenuOpen &&
