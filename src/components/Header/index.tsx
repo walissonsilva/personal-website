@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { RiMenuFill } from "react-icons/ri";
-import { IoIosArrowUp } from "react-icons/io";
+import { RiCloseLine, RiMenuFill } from "react-icons/ri";
 import {
   Container,
   HeaderBrand,
@@ -39,7 +38,7 @@ export const Header = ({ active }: HeaderProps) => {
           </HeaderBrand>
 
           <NavIcon onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <IoIosArrowUp /> : <RiMenuFill />}
+            {isMenuOpen ? <RiCloseLine /> : <RiMenuFill />}
           </NavIcon>
         </MiniMenuContainer>
 
