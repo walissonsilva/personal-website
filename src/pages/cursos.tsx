@@ -1,13 +1,11 @@
 import { GetServerSideProps } from "next";
-import { useMemo, useState } from "react";
-import { BlogCard } from "../components/BlogCard";
+import { CoursesList } from "../components/CoursesList";
 import Footer from "../components/Footer";
 import { Header } from "../components/Header";
-import { IPost } from "../components/HomeSections";
 import NextHead from "../components/NextHead";
 import { SearchBar } from "../components/SearchBar";
 import { useSearchBar } from "../components/SearchBar/useSearchBar";
-import { getPostsToBlogPage } from "../services/prismic";
+import { getCourses } from "../services/prismic";
 import { SectionTitle } from "../styles/atoms";
 import { SectionContainer } from "../styles/containers";
 import {
@@ -16,29 +14,38 @@ import {
   PostsContainer,
 } from "../styles/pages/blog";
 
-interface BlogProps {
-  posts: IPost[];
+export type ICourse = {
+  id: string;
+  title: string;
+  imageUrl: string;
+  category: string;
+  description: string;
+  youtubeUrl: string;
+};
+
+interface CourseProps {
+  courses: ICourse[];
 }
 
-export default function Blog({ posts }: BlogProps) {
-  const searchBarProps = useSearchBar<IPost>(posts);
+const Courses: React.FC<CourseProps> = ({ courses }) => {
+  const searchBarProps = useSearchBar<ICourse>(courses);
 
   return (
     <>
       <NextHead
-        title="Blog | Walisson Silva"
-        description="Blog sobre Desenvolvimento Web, Python e Ciência de Dados."
-        ogImage=""
-        ogUrl="blog"
+        title="Cursos | Walisson Silva"
+        description="Cursos sobre Desenvolvimento Web, Python e Ciência de Dados, ministrados por Walisson Silva."
+        ogImage="/images/me.png"
+        ogUrl="/cursos"
       />
 
-      <Header active="blog" />
+      <Header active="cursos" />
 
       <SectionContainer>
         <Container>
           <BlogHeaderContainer>
             <SectionTitle>
-              Blog
+              Cursos
               <hr />
             </SectionTitle>
 
@@ -46,18 +53,7 @@ export default function Blog({ posts }: BlogProps) {
           </BlogHeaderContainer>
 
           <PostsContainer>
-            {searchBarProps.objectAfterSearch.map((post) => (
-              <BlogCard
-                key={post.id}
-                id={post.id}
-                title={post.title}
-                subtitle={post.subtitle}
-                imageUrl={post.imageUrl}
-                level={post.level}
-                readingTime={post.readingTime}
-                updatedAt={post.updatedAt}
-              />
-            ))}
+            <CoursesList courses={searchBarProps.objectAfterSearch} />
           </PostsContainer>
         </Container>
       </SectionContainer>
@@ -65,14 +61,16 @@ export default function Blog({ posts }: BlogProps) {
       <Footer />
     </>
   );
-}
+};
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = await getPostsToBlogPage();
+  const courses = await getCourses();
 
   return {
     props: {
-      posts,
+      courses,
     },
   };
 };
+
+export default Courses;

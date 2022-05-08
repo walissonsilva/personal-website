@@ -13,7 +13,7 @@ export const SectionContainer = styled.div`
   @media (max-width: 768px) {
     padding: 4rem 2.5rem;
   }
-`
+`;
 
 export const ButtonCenteredContainer = styled.div`
   display: flex;
@@ -21,4 +21,26 @@ export const ButtonCenteredContainer = styled.div`
   align-items: center;
 
   margin-top: 2rem;
-`
+`;
+
+interface FlexContainerProps {
+  direction?: "row" | "column";
+  justifyContent?:
+    | "center"
+    | "flex-start"
+    | "flex-end"
+    | "space-between"
+    | "space-around";
+  alignItems?: "center" | "flex-start" | "flex-end";
+}
+export const FlexContainer = styled.div<FlexContainerProps>`
+  display: flex;
+  direction: ${(props) => props.direction || "row"};
+  justify-content: ${(props) => props.justifyContent || "flex-start"};
+  align-items: ${(props) => props.alignItems || "flex-start"};
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;

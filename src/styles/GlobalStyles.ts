@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -10,8 +10,8 @@ const GlobalStyles = createGlobalStyle`
   html,
   body,
   #root {
-    background-color: ${props => props.theme.colors['background-body']};
-    color: ${props => props.theme.colors['text-color']};
+    background-color: ${(props) => props.theme.colors["background-body"]};
+    color: ${(props) => props.theme.colors["text-color"]};
     font-size: 1rem;
     font-weight: 400;
 
@@ -26,12 +26,11 @@ const GlobalStyles = createGlobalStyle`
 
   *, button, input {
     border: 0;
-    outline: none;
     font-family: 'Poppins', sans-serif;
   }
 
   h1,h2,h3,h4,h5,h6,p,span {
-    color: ${props => props.theme.colors['text-color']}
+    color: ${(props) => props.theme.colors["text-color"]}
   }
 
   button {
@@ -46,13 +45,13 @@ const GlobalStyles = createGlobalStyle`
   ::-webkit-scrollbar-track {
     box-shadow: none;
     -webkit-box-shadow: none;
-    background-color: ${props => props.theme.colors['background-primary']};
+    background-color: ${(props) => props.theme.colors["background-primary"]};
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background-color: ${props => props.theme.colors['background-body']};
+    background-color: ${(props) => props.theme.colors["background-body"]};
   }
 
   ::-webkit-scrollbar-corner {
@@ -74,12 +73,12 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .Toastify__toast--success {
-    background-color: ${props => props.theme.colors.success};
+    background-color: ${(props) => props.theme.colors.success};
     font-weight: 500;
   }
 
   .Toastify__toast--error {
-    ${props => props.theme.colors.danger}
+    ${(props) => props.theme.colors.danger}
     font-weight: 500;
   }
 
@@ -90,7 +89,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .Toastify__toast--info {
-    background-color: ${props => props.theme.colors['primary-color-blue']};
+    background-color: ${(props) => props.theme.colors["primary-color-blue"]};
     font-weight: 500;
   }
 
@@ -109,9 +108,10 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     margin-top: 60px;
     overflow-y: auto;
+    outline: none;
     -webkit-overflow-scrolling: touch;
 
-    background-color: ${props => props.theme.colors['background-primary']};
+    background-color: ${(props) => props.theme.colors["background-primary"]};
 
     button.close-modal-button {
       background: transparent;
@@ -128,7 +128,7 @@ const GlobalStyles = createGlobalStyle`
       }
 
       svg {
-        color: ${props => props.theme.colors.white};
+        color: ${(props) => props.theme.colors.white};
         font-size: 1.6rem;
       }
     }
@@ -153,6 +153,6 @@ const GlobalStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
   }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

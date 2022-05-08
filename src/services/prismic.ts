@@ -163,3 +163,33 @@ export async function getPost(id: string) {
 
   return post;
 }
+
+export async function getCourses() {
+  const prismic = getPrismicClient();
+
+  const response = await prismic.query(
+    [Prismic.predicates.at("document.type", "course")],
+    { orderings: "[document.first_publication_date desc]" }
+  );
+
+  const courses = response.results.map((course) => {
+    return {
+      id: course.uid,
+      title: course.data.title[0].text,
+      youtubeUrl: course.data.youtube_link?.url,
+      imageUrl: course.data.thumbnail?.url ?? "",
+      category: course.data.category,
+      description: RichText.asHtml(course.data.description),
+      updatedAt: new Date(course.last_publication_date).toLocaleDateString(
+        "pt-BR",
+        {
+          day: "2-digit",
+          month: "2-digit",
+          year: "2-digit",
+        }
+      ),
+    };
+  });
+
+  return courses;
+}

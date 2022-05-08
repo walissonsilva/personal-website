@@ -1,21 +1,22 @@
-import React from 'react';
-import { RiCloseLine } from 'react-icons/ri';
-import * as ReactModal from 'react-modal';
+import React from "react";
+import { RiCloseLine } from "react-icons/ri";
+import ReactModal from "react-modal";
 
 interface ModalProps {
   isOpen: boolean;
   toggleModal: () => void;
+  children: React.ReactNode;
 }
+
+ReactModal.setAppElement("#__next");
 
 export const Modal: React.FC<ModalProps> = ({
   isOpen,
   toggleModal,
   children,
 }) => {
-  ReactModal.default.setAppElement("#__next");
-  
   return (
-    <ReactModal.default
+    <ReactModal
       isOpen={isOpen}
       onRequestClose={toggleModal}
       className="react-modal"
@@ -23,14 +24,11 @@ export const Modal: React.FC<ModalProps> = ({
       ariaHideApp={false}
       preventScroll={false}
     >
-      { children }
+      {children}
 
-      <button
-        className="close-modal-button"
-        onClick={toggleModal}
-      >
+      <button className="close-modal-button" onClick={toggleModal}>
         <RiCloseLine />
       </button>
-    </ReactModal.default>
-  )
-}
+    </ReactModal>
+  );
+};
