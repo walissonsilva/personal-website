@@ -1,10 +1,10 @@
 # Site Pessoal
 
-### Versão Desktop
+### Versão Desktop 🖥
 
 ![](public/images/screenshot-web.png)
 
-### Versão Mobile
+### Versão Mobile 📱
 
 ![](public/images/screenshot-mobile.png)
 
