@@ -55,3 +55,17 @@ A aplicação foi construída utilizando:
 <img src="public/color_palette.png" alt="Paleta de cores utilizado no projeto" width=400 />
 
 Você também pode acessar a paleta de cores por meio [deste link](https://coolors.co/0267c1-787ff6-d3d5d4-383d3b-0e1116). Se preferir, acesse o arquivo `src/styles/themes/dark.ts` para visualizar as cores e outros estilos padrões do projeto.
+
+## Autor
+
+<a href="https://www.walissonsilva.com">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/13500056?v=4" width="100px;" alt=""/>
+ <br />
+ <b>Walisson Silva</b></a>
+
+Feito com ❤️ por Walisson Silva 👋🏽
+
+Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-WalissonSilva-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/walissonsilva/)](https://www.linkedin.com/in/walissonsilva/)
+[![Gmail Badge](https://img.shields.io/badge/-walissonsilva10@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:walissonsilva10@gmail.com)](mailto:walissonsilva10@gmail.com)
