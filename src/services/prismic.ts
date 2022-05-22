@@ -49,7 +49,7 @@ export async function getPostsToHome() {
       //   'post.subtitle'
       // ],
       pageSize: 6,
-      orderings: "[document.last_publication_date desc]",
+      orderings: "[document.first_publication_date desc]",
     }
   );
 
@@ -90,7 +90,7 @@ export async function getPostsToBlogPage() {
 
   const response = await prismic.query(
     [Prismic.predicates.at("document.type", "post")],
-    { orderings: "[document.last_publication_date desc]" }
+    { orderings: "[document.first_publication_date desc]" }
   );
 
   const qntWordsReadPerMinute = 150;
