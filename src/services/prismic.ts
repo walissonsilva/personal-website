@@ -71,7 +71,7 @@ export async function getPostsToHome() {
       imageUrl: post.data.cover.url,
       level: post.data.level,
       readingTime: Math.ceil(qntWordsOnPost / qntWordsReadPerMinute),
-      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+      updatedAt: new Date(post.first_publication_date).toLocaleDateString(
         "pt-BR",
         {
           day: "2-digit",
@@ -110,7 +110,7 @@ export async function getPostsToBlogPage() {
       imageUrl: post.data.cover?.url ?? "",
       level: post.data.level,
       readingTime: Math.ceil(qntWordsOnPost / qntWordsReadPerMinute),
-      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+      updatedAt: new Date(post.first_publication_date).toLocaleDateString(
         "pt-BR",
         {
           day: "2-digit",
