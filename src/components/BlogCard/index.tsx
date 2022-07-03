@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import { BiCalendar, BiTime, BiUser } from 'react-icons/bi';
-import { IPost } from '../HomeSections';
+import { BiCalendar, BiTime, BiUser } from "react-icons/bi";
+import { IPost } from "../HomeSections";
 
 import {
   Container,
-  Header,
-  CoverImage,
+  ContainerLink,
   Content,
-  Subtitle,
+  CoverImage,
+  Header,
   Level,
-  PostDataContainer,
   PostData,
-} from './styles';
+  PostDataContainer,
+  Subtitle,
+} from "./styles";
 
 export function BlogCard({
   id,
@@ -23,18 +23,18 @@ export function BlogCard({
   updatedAt,
 }: IPost) {
   return (
-    <Link href={`/posts/${id}`}>
-      <Container>
+    <Container>
+      <ContainerLink href={`/posts/${id}`} aria-label={title}>
         <Header>
           <CoverImage src={imageUrl} alt={title} />
           <PostDataContainer>
             <PostData>
               <BiCalendar />
-              { updatedAt }
+              {updatedAt}
             </PostData>
             <PostData>
               <BiTime />
-              { `${readingTime} min` }
+              {`${readingTime} min`}
             </PostData>
             <PostData>
               <BiUser />
@@ -44,10 +44,10 @@ export function BlogCard({
         </Header>
 
         <Content>
-          <Subtitle>{ subtitle }</Subtitle>
-          <Level>{ level }</Level>
+          <Subtitle>{subtitle}</Subtitle>
+          <Level>{level}</Level>
         </Content>
-      </Container>
-    </Link>
-  )
+      </ContainerLink>
+    </Container>
+  );
 }

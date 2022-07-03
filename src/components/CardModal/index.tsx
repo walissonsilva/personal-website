@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import { Button } from '../Button';
-import { Modal } from '../Modal';
-import { useModal } from '../Modal/useModal';
+import React, { KeyboardEvent } from "react";
+import Link from "next/link";
+import { Button } from "../Button";
+import { Modal } from "../Modal";
+import { useModal } from "../Modal/useModal";
 
 import {
   Container,
@@ -12,7 +12,8 @@ import {
   ModalTitle,
   ModalDescription,
   ButtonContainer,
-} from './styles';
+} from "./styles";
+import { handleEnterKeyPress } from "../../utils/handleEnterKeyPressed";
 
 interface CardModalProps {
   title: string;
@@ -34,40 +35,41 @@ export const CardModal: React.FC<CardModalProps> = ({
   const { isOpen, toggleModal } = useModal();
 
   return (
-    <Container onClick={toggleModal}>
+    <Container
+      onClick={toggleModal}
+      tabIndex={0}
+      onKeyDown={(event: KeyboardEvent<HTMLElement>) =>
+        handleEnterKeyPress(event, toggleModal)
+      }
+    >
       <CoverImage src={coverImage} alt={altCoverImage} />
       <OverlayContainer>
-        <Title>{ title }</Title>
+        <Title>{title}</Title>
       </OverlayContainer>
 
-      <Modal
-        isOpen={isOpen}
-        toggleModal={toggleModal}
-      >
-        <ModalTitle>{ title }</ModalTitle>
+      <Modal isOpen={isOpen} toggleModal={toggleModal}>
+        <ModalTitle>{title}</ModalTitle>
 
         <CoverImage src={coverImage} alt={altCoverImage} />
 
         <ModalDescription>
-          { isDescriptionHTML ? (
-            <div dangerouslySetInnerHTML={{ __html: description}} />
+          {isDescriptionHTML ? (
+            <div dangerouslySetInnerHTML={{ __html: description }} />
           ) : (
-            <>{ description }</>
+            <>{description}</>
           )}
         </ModalDescription>
-        
-        { actionUrl && (
+
+        {actionUrl && (
           <ButtonContainer>
             <Link href={actionUrl}>
               <a target="_blank">
-                <Button size="sm">
-                  Conferir no GitHub
-                </Button>
+                <Button size="sm">Conferir no GitHub</Button>
               </a>
             </Link>
           </ButtonContainer>
-        ) }
+        )}
       </Modal>
     </Container>
-  )
-}
+  );
+};

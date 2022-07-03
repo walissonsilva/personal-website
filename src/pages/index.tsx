@@ -64,30 +64,35 @@ export default function Home({ portfolioProjects, posts }: HomeProps) {
               <SocialIcon
                 href="https://www.linkedin.com/in/walissonsilva/"
                 target="_blank"
+                aria-label="Link para acessar meu perfil no LinkedIn"
               >
                 <IoLogoLinkedin />
               </SocialIcon>
               <SocialIcon
                 href="https://github.com/walissonsilva"
                 target="_blank"
+                aria-label="Link para acessar meu perfil no GitHub"
               >
                 <IoLogoGithub />
               </SocialIcon>
               <SocialIcon
                 href="https://www.youtube.com/c/walissonsilva"
                 target="_blank"
+                aria-label="Link para acessar meu canal do YouTube"
               >
                 <IoLogoYoutube />
               </SocialIcon>
               <SocialIcon
                 href="https://www.instagram.com/walissonsilvablog/"
                 target="_blank"
+                aria-label="Link para acessar meu perfil no Instagram"
               >
                 <IoLogoInstagram />
               </SocialIcon>
               <SocialIcon
                 href="mailto:walissonsilva10@gmail.com"
                 target="_blank"
+                aria-label="Link para me enviar um e-mail"
               >
                 <IoMailSharp />
               </SocialIcon>
