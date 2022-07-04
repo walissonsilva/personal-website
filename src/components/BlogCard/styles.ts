@@ -14,7 +14,9 @@ export const Container = styled.article`
   }
 `;
 
-export const ContainerLink = styled.a``;
+export const ContainerLink = styled.a`
+  display: block;
+`;
 
 export const Header = styled.header`
   display: block;
