@@ -41,7 +41,7 @@ export default function Home({ portfolioProjects, posts }: HomeProps) {
       <NextHead
         title="Home | Walisson Silva"
         description="Site pessoal com informações profissionais, projetos de portfólio, e blog sobre Desenvolvimento Web, Python e Ciência de Dados."
-        ogImage="/images/me.png"
+        ogImage="/images/me-avatar.png"
       />
 
       <Header active="home" />
@@ -49,7 +49,7 @@ export default function Home({ portfolioProjects, posts }: HomeProps) {
       <HomeBanner>
         <HomeBannerContainer>
           <ImageContainer>
-            <img src="/images/me.png" alt="Walisson Silva" />
+            <img src="/images/me-avatar.png" alt="Walisson Silva" />
           </ImageContainer>
           <BannerContent>
             <h1>Walisson Silva</h1>

@@ -35,7 +35,7 @@ const Courses: React.FC<CourseProps> = ({ courses }) => {
       <NextHead
         title="Cursos | Walisson Silva"
         description="Cursos sobre Desenvolvimento Web, Python e Ciência de Dados, ministrados por Walisson Silva."
-        ogImage="/images/me.png"
+        ogImage="/images/me-avatar.png"
         ogUrl="/cursos"
       />
 
