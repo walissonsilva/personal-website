@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { SectionTitle } from '../../../styles/atoms';
+import { SectionTitle } from "../../../styles/atoms";
 
-import { SectionContainer } from '../../../styles/containers';
-import { CardModal } from '../../CardModal';
+import { SectionContainer } from "../../../styles/containers";
+import { CardModal } from "../../CardModal";
 
-import {
-  Container,
-} from './styles';
+import { Container } from "./styles";
 
 export interface IPortfolioProject {
   id: string;
@@ -26,10 +24,12 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
 }) => {
   return (
     <SectionContainer>
-      <SectionTitle>Portfolio <hr /></SectionTitle>
+      <SectionTitle>
+        Portfólio <hr />
+      </SectionTitle>
 
       <Container>
-        { projects.map((project) => (
+        {projects.map((project) => (
           <CardModal
             key={project.id}
             title={project.title}
@@ -39,8 +39,8 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({
             actionUrl={project.projectUrl}
             isDescriptionHTML
           />
-        ) ) }
+        ))}
       </Container>
     </SectionContainer>
-  )
-}
+  );
+};

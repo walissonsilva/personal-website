@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   FcStart,
   FcCommandLine,
@@ -8,25 +8,19 @@ import {
   FcIdea,
   FcLinux,
   FcLike,
-} from 'react-icons/fc';
+} from "react-icons/fc";
 
-import {
-  SectionTitle,
-} from '../../../styles/atoms';
+import { SectionTitle } from "../../../styles/atoms";
 
-import {
-  Container,
-  SimpleCardGrid,
-  SimpleCard,
-} from './styles';
-import { SectionContainer } from '../../../styles/containers';
+import { Container, SimpleCardGrid, SimpleCard } from "./styles";
+import { SectionContainer } from "../../../styles/containers";
 
 export const AboutSection: React.FC = () => {
   return (
     <SectionContainer>
       <Container>
         <SectionTitle>
-          About
+          Sobre mim
           <hr />
         </SectionTitle>
 
@@ -66,5 +60,5 @@ export const AboutSection: React.FC = () => {
         </SimpleCardGrid>
       </Container>
     </SectionContainer>
-  )
-}
+  );
+};

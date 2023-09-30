@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   margin-top: 3rem;
-`
+`;
 
 export const SimpleCardGrid = styled.div`
   display: grid;
@@ -18,10 +18,10 @@ export const SimpleCardGrid = styled.div`
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
   }
-`
+`;
 
 export const SimpleCard = styled.div`
-  background-color: ${props => props.theme.colors["background-primary"]};
+  background-color: ${(props) => props.theme.colors["background-primary"]};
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
@@ -47,4 +47,4 @@ export const SimpleCard = styled.div`
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.45);
     transition: box-shadow 0.3s;
   }
-`
+`;

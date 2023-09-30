@@ -54,10 +54,10 @@ export default function Home({ portfolioProjects, posts }: HomeProps) {
           <BannerContent>
             <h1>Walisson Silva</h1>
             <h3>
-              <strong>Desenvolvedor</strong> Web &&
+              <strong>Desenvolvedor</strong> Full Stack &&
             </h3>
             <h3>
-              <strong>Professor</strong> de Web e Data Science
+              <strong>Professor</strong> de Programação
             </h3>
 
             <SocialIconsContainer>
