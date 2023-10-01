@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 
 interface LayoutProps {
@@ -5,5 +7,5 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return <main className="dark">{children}</main>;
+  return <main>{children}</main>;
 };
