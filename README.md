@@ -1,71 +1,36 @@
-# Site Pessoal
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### Versão Desktop 🖥
+## Getting Started
 
-![](public/images/screenshot-web.png)
+First, run the development server:
 
-### Versão Mobile 📱
-
-![](public/images/screenshot-mobile.png)
-
-Esta aplicação consiste no meu site pessoal, desenvolvido com o Next.js, cujo o intuito é apresentar um pouco mais sobre mim, minhas skills, meus projetos, cursos e outros conteúdos que eu tenho o interesse que compartilhar na internet.
-
-Além disso, o propósito do meu site é mostrar um pouco do meu trabalho, das minhas preferências, sendo todo o design de autoria própria.
-
-Este projeto segue uma arquitetura Jamstack e, portanto, consiste apenas em um front-end, para o qual os dados são servidos por um CMS (Prismic CMS).
-
-## Páginas da Aplicação
-
-O site contém as seguintes páginas:
-
-1. Home: A página inicial do site. Contém um banner principal com uma foto, breve descrição e links para minhas redes sociais. Em seguida, uma seção com mais informações sobre mim, seguida por uma seção que apresenta meus principais projetos. Por fim, a última seção corresponde ao Blog, contendo os seis últimos posts.
-2. Cursos: Uma página listando cursos de autoria própria e disponíveis gratuitamente no YouTube.
-3. Blog: Uma página listando todos os meus posts do blog, com a opção de pesquisar por uma palavra-chave.
-
-## Como rodar a aplicação?
-
-Primeiramente, é necessário ter o [Git](https://git-scm.com/downloads) e o [Node.js](https://nodejs.org/en/download/) instalados em sua máquina. Com isso, abra o seu Git Bash (Windows) ou Terminal (Linux/macOS) e digite o comando:
-
-```
-git clone https://github.com/walissonsilva/personal-website.git
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Ao terminar o download do repositório, utilize o comando `cd personal-website` para acessar a pasta do projeto.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Por fim, execute o comando `npm install` para instalar todas as dependências do projeto e, em seguida, `npm run dev` para subir o servidor.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Feito isso, basta acessar `http://localhost:3000` no seu navegador para visualizar o projeto. 🚀
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-> Os projetos do portfólio, cursos e posts do Blog não deverão aparecer na página, pois você não terá as chaves de acesso à minha conta do Prismic; no entanto, o restante da página será renderizado normalmente.
+## Learn More
 
-## Tecnologias Utilizadas
+To learn more about Next.js, take a look at the following resources:
 
-A aplicação foi construída utilizando:
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- [Next.js](https://nextjs.org/)
-- [Styled-componentes](https://styled-components.com/) para a criação de componentes estilizados
-- [Prismic CMS](https://prismic.io/) para a obtenção dos dados de portfólio, cursos e blog
-- [React Icons](https://react-icons.github.io/react-icons/) para os ícones
-- [TypeScript](https://www.typescriptlang.org/) para a tipagem estática do JS e evitar erros no desenvolvimento
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Extras
+## Deploy on Vercel
 
-### Paleta de cores da Aplicação
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-<img src="public/color_palette.png" alt="Paleta de cores utilizado no projeto" width=400 />
-
-Você também pode acessar a paleta de cores por meio [deste link](https://coolors.co/0267c1-787ff6-d3d5d4-383d3b-0e1116). Se preferir, acesse o arquivo `src/styles/themes/dark.ts` para visualizar as cores e outros estilos padrões do projeto.
-
-## Autor
-
-<a href="https://www.walissonsilva.com">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/13500056?v=4" width="100px;" alt=""/>
- <br />
- <b>Walisson Silva</b></a>
-
-Feito com ❤️ por Walisson Silva 👋🏽
-
-Entre em contato!
-
-[![Linkedin Badge](https://img.shields.io/badge/LinkedIn-WalissonSilva-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/walissonsilva/)](https://www.linkedin.com/in/walissonsilva/)
-[![Gmail Badge](https://img.shields.io/badge/-walissonsilva10@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:walissonsilva10@gmail.com)](mailto:walissonsilva10@gmail.com)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
