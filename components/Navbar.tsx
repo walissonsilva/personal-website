@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -11,10 +11,25 @@ import {
 import Link from "next/link";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { Button } from "./ui/button";
+import { useTheme } from "@/hooks/useTheme";
 
 export const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (theme !== "dark") {
+      body.classList.remove("dark");
+      body.classList.add("light");
+    } else {
+      body.classList.add("dark");
+      body.classList.remove("light");
+    }
+  }, [theme]);
+
   return (
-    <header className="border-b-muted border-[1px] border-solid h-16 flex items-center justify-between">
+    <header className="border-b-muted border-l-transparent border-[1px] border-solid h-16 flex items-center justify-between">
       <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-between w-full">
         <Link href="/">Walisson Silva</Link>
 
@@ -58,8 +73,9 @@ export const Navbar = () => {
                 size="icon"
                 aria-label="toggle-change-theme"
                 className="ml-2"
+                onClick={toggleTheme}
               >
-                <FiSun />
+                {theme === "dark" ? <FiSun /> : <FiMoon />}
               </Button>
             </NavigationMenuItem>
           </NavigationMenuList>
