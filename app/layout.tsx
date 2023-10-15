@@ -1,3 +1,4 @@
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} dark`}>{children}</body>
+      <body className={`${raleway.className} dark`}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
