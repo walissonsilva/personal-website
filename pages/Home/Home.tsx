@@ -33,13 +33,21 @@ export const Home = () => {
       <Navbar />
 
       <section className="max-w-screen-xl flex flex-col items-center justify-center h-[calc(100vh-4rem)] px-4 mx-auto">
-        <img
+        <motion.img
+          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          transition={{ ease: "easeOut", duration: 0.15 }}
           src="https://avatars.githubusercontent.com/u/13500056?v=4"
           alt="Walisson Silva"
           className="rounded-full w-96"
         />
 
-        <motion.div variants={item} className="text-center mt-8">
+        <motion.div
+          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          transition={{ ease: "easeOut", duration: 0.15 }}
+          className="text-center mt-8"
+        >
           <h1 className="text-5xl font-medium">Walisson Silva</h1>
           <p className="text-lg text-muted-foreground mt-2">
             Senior Full Stack Developer
