@@ -31,7 +31,9 @@ export const Navbar = () => {
   return (
     <header className="border-b-muted border-l-transparent border-[1px] border-solid h-16 flex items-center justify-between">
       <div className="max-w-screen-xl mx-auto px-4 flex items-center justify-between w-full">
-        <Link href="/">Walisson Silva</Link>
+        <Link href="/" className="text-primary font-bold text-lg">
+          Walisson Silva
+        </Link>
 
         <NavigationMenu>
           <NavigationMenuList>

@@ -1,9 +1,9 @@
-import { Navbar } from "@/components/Navbar";
+import { Home } from "@/pages/Home/Home";
 
-export default function Home() {
-  return (
-    <main>
-      <Navbar />
-    </main>
-  );
+export const metadata = {
+  title: "Home | Walisson Silva",
+};
+
+export default function HomePage() {
+  return <Home />;
 }
