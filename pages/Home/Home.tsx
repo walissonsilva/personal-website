@@ -32,14 +32,14 @@ export const Home = () => {
     <main>
       <Navbar />
 
-      <section className="max-w-screen-xl flex flex-col items-center justify-center h-[calc(100vh-4rem)] px-4 mx-auto">
+      <section className="max-w-screen-xl flex flex-col items-center justify-center h-[calc(100vh-4rem)] px-8 mx-auto">
         <motion.img
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0.8 }}
           transition={{ ease: "easeOut", duration: 0.15 }}
           src="https://avatars.githubusercontent.com/u/13500056?v=4"
           alt="Walisson Silva"
-          className="rounded-full w-96"
+          className="rounded-full sm:w-96 w-full"
         />
 
         <motion.div
@@ -50,7 +50,7 @@ export const Home = () => {
         >
           <h1 className="text-5xl font-medium">Walisson Silva</h1>
           <p className="text-lg text-muted-foreground mt-2">
-            Senior Full Stack Developer
+            Senior Full Stack Engineer
           </p>
         </motion.div>
 
