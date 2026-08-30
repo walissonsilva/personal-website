@@ -22,7 +22,7 @@ interface IPost {
   title: string;
   subtitle: string;
   imageUrl: string;
-  level: string;
+  level: 'Iniciante' | 'Intermediário' | 'Avançado';
   content: string;
   readingTime: number;
   updatedAt: string;
@@ -63,7 +63,7 @@ export default function Post({ post }: PostProps) {
                 <BiTime />
                 {`${post.readingTime} min`}
               </PostData>
-              <Level>{post.level}</Level>
+              <Level level={post.level}>{post.level}</Level>
             </PostDataContainer>
           </PostHeader>
 

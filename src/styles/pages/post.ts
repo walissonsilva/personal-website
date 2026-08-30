@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { getLevelColor } from "../../utils/getLevelColor";
 
 export const Container = styled.article`
   margin: 5rem auto 2rem;
@@ -74,12 +75,12 @@ export const PostData = styled.span`
   }
 `
 
-export const Level = styled.span`
+export const Level = styled.span<{ level: string }>`
   display: block;
   width: fit-content;
   padding: 2px 10px;
-  background-color: ${props => props.theme.colors["success"] + '55'};
-  border: 2px solid ${props => props.theme.colors["success"]};
+  background-color: ${props => props.theme.colors[getLevelColor(props.level)] + '55'};
+  border: 2px solid ${props => props.theme.colors[getLevelColor(props.level)]};
   color: ${props => props.theme.colors.white};
   border-radius: 6px;
   font-size: 0.9rem;

@@ -18,6 +18,7 @@ const colorsPallete = {
     success: '#17AE38',
     info: '#0193F7',
     warning: '#FFD950',
+    orange: '#FF8A00',
     danger: '#FF2366',
   },
 }

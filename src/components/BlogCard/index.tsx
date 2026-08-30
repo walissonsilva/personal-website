@@ -45,7 +45,7 @@ export function BlogCard({
 
         <Content>
           <Subtitle>{subtitle}</Subtitle>
-          <Level>{level}</Level>
+          <Level level={level}>{level}</Level>
         </Content>
       </ContainerLink>
     </Container>
